@@ -1,0 +1,220 @@
+{
+  "category": "app",
+  "directions": [
+    {
+      "id": "d_app_iot",
+      "name": "物联网与嵌入式",
+      "en": "IoT & Embedded Systems",
+      "desc": "把计算嵌入物理世界：在功耗、实时性与成本的三重约束下完成感知、连接与控制。",
+      "base": [
+        {"n": "嵌入式基础", "t": "MCU 架构、寄存器编程、交叉编译、在线调试", "l": "C、Rust", "s": "STM32Cube、OpenOCD、J-Link"}
+      ],
+      "branches": [
+        {
+          "name": "嵌入式系统与实时性",
+          "desc": "在毫秒级时限内可靠响应外部事件。",
+          "points": [
+            {"n": "RTOS 与实时调度", "t": "任务优先级、中断延迟、优先级继承、栈分析", "l": "C", "s": "FreeRTOS、Zephyr、RT-Thread"},
+            {"n": "外设与总线", "t": "I2C/SPI/UART/CAN、DMA、采样与数字滤波", "l": "C", "s": "HAL/LL 库、逻辑分析仪"}
+          ]
+        },
+        {
+          "name": "无线连接",
+          "desc": "在有限功耗预算内把设备接入网络。",
+          "points": [
+            {"n": "短距无线", "t": "BLE、Zigbee、Thread、Matter、Mesh 组网", "l": "—", "s": "Zephyr、Silicon Labs SDK、nRF Connect"},
+            {"n": "低功耗广域", "t": "LoRa/LoRaWAN、NB-IoT、eDRX/PSM、蜂窝模组", "l": "—", "s": "ChirpStack、AWS IoT Core"}
+          ]
+        },
+        {
+          "name": "边缘智能与工业互联",
+          "desc": "把模型与决策下沉到现场，减少时延与带宽成本。",
+          "points": [
+            {"n": "边缘智能", "t": "模型压缩、量化、TinyML、端侧推理调度", "l": "C++、Python", "s": "TensorFlow Lite Micro、Edge Impulse、ONNX Runtime"},
+            {"n": "工业互联", "t": "OPC UA、TSN、Modbus、预测性维护", "l": "—", "s": "open62541、Siemens TIA、Ignition"},
+            {"n": "功能安全", "t": "ISO 26262、IEC 61508、冗余设计、失效模式分析", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "物联网平台",
+          "desc": "海量设备的接入、管理与生命周期运维。",
+          "points": [
+            {"n": "接入与设备管理", "t": "MQTT/CoAP、设备影子、OTA 升级、规则引擎", "l": "—", "s": "EMQX、ThingsBoard、AWS IoT"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_app_robot",
+      "name": "机器人与具身智能",
+      "en": "Robotics & Embodied AI",
+      "desc": "让智能体在物理世界中感知、规划与行动，是 AI 与控制的交汇点。",
+      "base": [
+        {"n": "机器人学基础", "t": "位姿表示、齐次变换、正逆运动学、雅可比", "l": "C++、Python", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "规划与控制",
+          "desc": "在动力学约束下生成可行且最优的运动。",
+          "points": [
+            {"n": "运动规划", "t": "A*/RRT*、轨迹优化、避障、采样式规划", "l": "C++", "s": "OMPL、MoveIt、TrajOpt"},
+            {"n": "控制方法", "t": "PID、MPC、全身控制 WBC、阻抗/力控", "l": "—", "s": "CasADi、MuJoCo、OCS2"}
+          ]
+        },
+        {
+          "name": "状态估计与 SLAM",
+          "desc": "在噪声与漂移中回答“我在哪、周围是什么”。",
+          "points": [
+            {"n": "概率状态估计", "t": "卡尔曼/粒子滤波、因子图优化、IMU 预积分", "l": "—", "s": "GTSAM、Ceres、EKF2"},
+            {"n": "SLAM", "t": "激光/视觉/惯性融合、回环检测、稠密建图", "l": "—", "s": "Cartographer、ORB-SLAM3、LIO-SAM"}
+          ]
+        },
+        {
+          "name": "操作与具身学习",
+          "desc": "从抓取到灵巧操作，用学习替代手工建模。",
+          "points": [
+            {"n": "抓取与操作", "t": "抓取检测、力控装配、灵巧手、触觉反馈", "l": "—", "s": "GraspNet、Diffusion Policy、Robotiq"},
+            {"n": "模仿与强化学习", "t": "示教学习、Sim2Real、域随机化、世界模型", "l": "—", "s": "Isaac Lab、legged_gym、RoboSuite"}
+          ]
+        },
+        {
+          "name": "应用系统",
+          "desc": "把感知-决策-执行闭环落到真实场景。",
+          "points": [
+            {"n": "自动驾驶", "t": "感知-预测-规划、BEV、端到端驾驶、安全冗余", "l": "—", "s": "Apollo、Autoware、CARLA"},
+            {"n": "仿真与数字孪生", "t": "物理引擎、传感器仿真、场景生成、闭环评测", "l": "—", "s": "Isaac Sim、Gazebo、MuJoCo"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_app_chain",
+      "name": "区块链与 Web3",
+      "en": "Blockchain & Web3",
+      "desc": "以密码学与共识构建去中心化、可验证的账本与应用，重新定义信任的建立方式。",
+      "base": [
+        {"n": "分布式账本原理", "t": "哈希链、Merkle 树、UTXO/账户模型、不可篡改性", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "共识与账本",
+          "desc": "在开放网络中就让谁记账、如何确认达成一致。",
+          "points": [
+            {"n": "共识机制", "t": "PoW/PoS、BFT 类共识、分片、最终性", "l": "Go、Rust", "s": "Tendermint、HotStuff、Lighthouse"},
+            {"n": "密码学账户", "t": "ECDSA、地址派生、多签、门限签名、账户抽象", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "智能合约",
+          "desc": "把业务规则写成链上可执行代码，代价是代码即法律。",
+          "points": [
+            {"n": "合约与虚拟机", "t": "EVM、Gas 模型、Solidity/Rust、WASM 合约", "l": "Solidity、Rust", "s": "Hardhat、Foundry、Remix"},
+            {"n": "合约安全", "t": "重入、整数溢出、预言机操纵、形式验证", "l": "—", "s": "Slither、Mythril、Certora"}
+          ]
+        },
+        {
+          "name": "扩容与互操作",
+          "desc": "在去中心化与吞吐之间寻找工程折中。",
+          "points": [
+            {"n": "Layer2 扩容", "t": "Optimistic/ZK Rollup、状态通道、DA 层、排序器", "l": "—", "s": "Optimism、Arbitrum、zkSync、Celestia"},
+            {"n": "跨链互操作", "t": "中继、轻客户端、桥、IBC、消息传递", "l": "—", "s": "IBC、LayerZero、Wormhole"}
+          ]
+        },
+        {
+          "name": "应用生态",
+          "desc": "从金融到身份，探索去中心化应用的可行边界。",
+          "points": [
+            {"n": "DeFi 与治理", "t": "AMM、借贷协议、稳定币、DAO 治理", "l": "—", "s": "Uniswap、Aave、Snapshot"},
+            {"n": "去中心化存储与身份", "t": "IPFS、DID、可验证凭证、数据确权", "l": "—", "s": "IPFS、Ceramic、ENS"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_app_bio",
+      "name": "生物信息与 AI for Science",
+      "en": "Bioinformatics & AI for Science",
+      "desc": "用计算方法解读生命与物质世界的复杂系统，是 AI 从语言走向科学发现的主通道。",
+      "base": [
+        {"n": "生物数据基础", "t": "序列、结构、组学、影像数据的表示与检索", "l": "Python", "s": "Biopython、NCBI Entrez"}
+      ],
+      "branches": [
+        {
+          "name": "基因组与组学",
+          "desc": "从测序读段到生物学结论的完整计算链路。",
+          "points": [
+            {"n": "序列分析", "t": "序列比对、组装、变异检测、功能注释", "l": "Python", "s": "BWA、GATK、SAMtools、Nextflow"},
+            {"n": "单细胞与多组学", "t": "表达定量、聚类、轨迹推断、多组学整合", "l": "R、Python", "s": "Seurat、Scanpy、DESeq2"}
+          ]
+        },
+        {
+          "name": "结构与药物",
+          "desc": "从氨基酸序列预测三维结构，并据此设计分子。",
+          "points": [
+            {"n": "结构预测与模拟", "t": "同源建模、几何深度学习、分子动力学", "l": "Python", "s": "AlphaFold、GROMACS、PyMOL"},
+            {"n": "药物发现", "t": "虚拟筛选、生成分子、ADMET 预测、蛋白-配体对接", "l": "—", "s": "RDKit、DeepChem、AutoDock Vina"}
+          ]
+        },
+        {
+          "name": "医学与影像",
+          "desc": "把计算方法带入临床诊断与真实世界研究。",
+          "points": [
+            {"n": "医学影像分析", "t": "分割、配准、分类、影像组学、弱监督", "l": "—", "s": "MONAI、nnU-Net、ITK"},
+            {"n": "临床与真实世界数据", "t": "电子病历、生存分析、因果效应、隐私保护", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "科学机器学习",
+          "desc": "把物理定律与对称性嵌入网络，服务科学发现。",
+          "points": [
+            {"n": "物理约束学习", "t": "PINN、神经算子、等变图网络、可微仿真", "l": "—", "s": "DeepXDE、Modulus、e3nn"},
+            {"n": "脑机接口", "t": "EEG/fMRI 解码、神经假体、在线自适应", "l": "—", "s": "MNE-Python、BCI2000"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_app_quantum",
+      "name": "量子计算与量子信息",
+      "en": "Quantum Computing & Quantum Information",
+      "desc": "利用量子叠加与纠缠实现新的计算与通信范式，是后摩尔时代最受关注的计算路线之一。",
+      "base": [
+        {"n": "量子力学基础", "t": "态矢、算符、测量、密度矩阵、纠缠", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "量子算法与线路",
+          "desc": "设计能在量子硬件上表达并放大干涉效应的算法。",
+          "points": [
+            {"n": "量子线路与门", "t": "单/双量子比特门、纠缠、测量、线路编译", "l": "Python", "s": "Qiskit、Cirq、Quil"},
+            {"n": "核心算法", "t": "Shor、Grover、QAOA、VQE、HHL", "l": "—", "s": "Qiskit、PennyLane、Qiskit Nature"}
+          ]
+        },
+        {
+          "name": "纠错与硬件",
+          "desc": "在退相干与噪声中维持逻辑量子比特。",
+          "points": [
+            {"n": "量子纠错", "t": "稳定子码、表面码、阈值定理、逻辑门", "l": "—", "s": "Stim、PyMatching、QEC 工具链"},
+            {"n": "硬件实现", "t": "超导、离子阱、光量子、中性原子、退相干", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "量子通信与安全",
+          "desc": "用物理定律而非计算复杂度保障通信安全。",
+          "points": [
+            {"n": "量子密钥分发", "t": "BB84、E91、量子中继、可信节点", "l": "—", "s": "—"},
+            {"n": "后量子迁移", "t": "与经典密码体系衔接、混合密钥交换", "l": "—", "s": "liboqs、OpenSSL"}
+          ]
+        },
+        {
+          "name": "量子模拟与量子机器学习",
+          "desc": "用量子系统模拟量子系统，并探索量子优势的边界。",
+          "points": [
+            {"n": "量子模拟", "t": "哈密顿量模拟、Trotter 化、张量网络", "l": "—", "s": "QuTiP、ITensor、Qiskit Dynamics"},
+            {"n": "量子机器学习", "t": "变分线路、量子核方法、量子神经网络", "l": "—", "s": "PennyLane、TensorFlow Quantum"}
+          ]
+        }
+      ]
+    }
+  ]
+}

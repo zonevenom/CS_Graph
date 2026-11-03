@@ -1,0 +1,180 @@
+{
+  "category": "sys",
+  "directions": [
+    {
+      "id": "d_sys_arch",
+      "name": "数字逻辑与计算机体系结构",
+      "en": "Digital Logic & Computer Architecture",
+      "desc": "从逻辑门到处理器微架构：定义计算的硬件形态，决定性能、能效与可编程性的边界。",
+      "base": [
+        {"n": "布尔代数与逻辑门", "t": "组合逻辑、卡诺图化简、时序逻辑、有限状态机", "l": "Verilog", "s": "Logisim、Vivado"},
+        {"n": "数据表示与运算", "t": "补码、IEEE 754 浮点、定点数、溢出与舍入", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "处理器微架构",
+          "desc": "在指令集之下挖掘指令级并行，是 CPU 性能的主要来源。",
+          "points": [
+            {"n": "指令集与流水线", "t": "RISC/CISC、五级流水、数据冒险与旁路、分支预测", "l": "汇编", "s": "RISC-V、ARMv9、x86-64"},
+            {"n": "乱序执行与超标量", "t": "寄存器重命名、保留站、推测执行、SIMD/AVX", "l": "—", "s": "gem5、Sniper、uarch-bench"}
+          ]
+        },
+        {
+          "name": "存储层次与互连",
+          "desc": "用多级缓存与互连网络弥合 CPU 与内存的巨大速度鸿沟。",
+          "points": [
+            {"n": "Cache 与一致性", "t": "映射与替换策略、MESI/MOESI、内存序模型", "l": "—", "s": "CACTI、Ramulator、CHAMP"},
+            {"n": "虚拟内存与 IO 互连", "t": "页表与 TLB、DMA、PCIe、片上网络 NoC", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "加速器与专用架构",
+          "desc": "当通用 CPU 失效时，用领域专用架构换取数量级的能效比。",
+          "points": [
+            {"n": "GPU 与 GPGPU", "t": "SIMT、warp 调度、共享内存、Tensor Core", "l": "CUDA、OpenCL", "s": "CUDA、ROCm、Triton"},
+            {"n": "领域专用架构 DSA", "t": "脉动阵列、数据流架构、量化、存算一体", "l": "—", "s": "TPU/NPU、Vitis HLS、TVM"}
+          ]
+        },
+        {
+          "name": "硬件设计与验证",
+          "desc": "把架构变成可流片、可验证的 RTL 与 SoC。",
+          "points": [
+            {"n": "RTL 设计与验证", "t": "SystemVerilog、UVM、形式验证、时序收敛", "l": "SystemVerilog、Chisel", "s": "Verilator、JasperGold、Vivado"},
+            {"n": "开源芯片生态", "t": "RISC-V 扩展、SoC 集成、FPGA 原型验证", "l": "—", "s": "Chipyard、OpenROAD、FuseSoC"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_sys_os",
+      "name": "操作系统",
+      "en": "Operating Systems",
+      "desc": "把裸硬件抽象为进程、内存、文件与设备，是所有上层软件运行时的宿主。",
+      "base": [
+        {"n": "中断与系统调用", "t": "中断/异常、特权级切换、syscall 接口、信号", "l": "C", "s": "Linux、strace"},
+        {"n": "内核结构", "t": "宏内核/微内核、可加载模块、eBPF 扩展", "l": "C、Rust", "s": "Linux、eBPF"}
+      ],
+      "branches": [
+        {
+          "name": "进程与并发",
+          "desc": "在有限核上调度海量任务，并保证共享状态的一致与前进。",
+          "points": [
+            {"n": "CPU 调度", "t": "CFS、实时调度（FIFO/RR/EDF）、多核负载均衡", "l": "C", "s": "Linux scheduler、perf sched"},
+            {"n": "同步与并发控制", "t": "互斥锁、信号量、条件变量、RCU、无锁数据结构", "l": "C++", "s": "futex、std::atomic、并发 sanitizer"}
+          ]
+        },
+        {
+          "name": "内存与文件系统",
+          "desc": "管理物理内存的分配回收，并把块设备组织为层次化命名空间。",
+          "points": [
+            {"n": "虚拟内存管理", "t": "分页、缺页异常、SLAB/SLUB、页面回收与交换", "l": "C", "s": "Linux MM、jemalloc、mimalloc"},
+            {"n": "文件系统", "t": "inode、日志、VFS、写时复制、FUSE", "l": "C", "s": "ext4、XFS、Btrfs、ZFS"}
+          ]
+        },
+        {
+          "name": "虚拟化与容器",
+          "desc": "以硬件辅助或内核命名空间实现资源隔离与多租户。",
+          "points": [
+            {"n": "硬件虚拟化", "t": "Hypervisor、VT-x/AMD-V、影子页表、SR-IOV", "l": "C", "s": "KVM、Xen、QEMU、Firecracker"},
+            {"n": "容器隔离", "t": "namespace、cgroup v2、UnionFS、seccomp、能力集", "l": "Go", "s": "Docker、containerd、runc、Podman"}
+          ]
+        },
+        {
+          "name": "实时与嵌入式系统",
+          "desc": "在确定的时间内响应事件，是工业控制与汽车电子的前提。",
+          "points": [
+            {"n": "实时调度", "t": "优先级反转、WCET 分析、可调度性判定", "l": "C", "s": "FreeRTOS、Zephyr、PREEMPT_RT"},
+            {"n": "驱动与功耗管理", "t": "设备树、中断下半部、DVFS、休眠唤醒", "l": "C", "s": "Linux driver model、ACPI"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_sys_comp",
+      "name": "编译原理与程序语言",
+      "en": "Compilers & Programming Languages",
+      "desc": "把人类可读的语言翻译为高效机器码，并在语言层提供类型安全与抽象能力。",
+      "base": [
+        {"n": "形式语言与文法", "t": "正则表达式、上下文无关文法、属性文法", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "编译前端",
+          "desc": "从字符流到带类型标注的抽象语法树。",
+          "points": [
+            {"n": "词法与语法分析", "t": "正则/DFA、LL/LR 分析、AST 构建、错误恢复", "l": "C++、Rust", "s": "ANTLR、Bison、Flex"},
+            {"n": "语义分析与类型系统", "t": "类型检查、Hindley-Milner 推断、泛型、所有权与借用", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "中端优化与后端",
+          "desc": "在保持语义的前提下重写程序，使其在目标机器上跑得更快。",
+          "points": [
+            {"n": "中间表示", "t": "三地址码、SSA 形式、控制流图、多级方言", "l": "—", "s": "LLVM IR、MLIR、GIMPLE"},
+            {"n": "优化与代码生成", "t": "常量传播、内联、循环变换、寄存器分配、指令调度", "l": "C++", "s": "LLVM、GCC、Cranelift"}
+          ]
+        },
+        {
+          "name": "运行时与 JIT",
+          "desc": "把编译推迟到运行期，用动态信息换取更好的代码。",
+          "points": [
+            {"n": "虚拟机与垃圾回收", "t": "解释执行、JIT 分层编译、分代/并发 GC", "l": "—", "s": "HotSpot、V8、GraalVM"},
+            {"n": "动态语言运行时", "t": "内联缓存、去优化、逃逸分析、隐藏类", "l": "—", "s": "V8、PyPy、LuaJIT"}
+          ]
+        },
+        {
+          "name": "程序分析与验证",
+          "desc": "在不确定输入下证明程序性质，是软件可信的最后一道防线。",
+          "points": [
+            {"n": "静态分析", "t": "数据流分析、抽象解释、指针分析、污点分析", "l": "—", "s": "Soot、Infer、SVF、CodeQL"},
+            {"n": "形式验证", "t": "模型检验、分离逻辑、精化演算、翻译验证", "l": "Coq、TLA+", "s": "CompCert、Frama-C、TLA+、Dafny"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_sys_dist",
+      "name": "并行分布式系统与云计算",
+      "en": "Parallel & Distributed Systems, Cloud Computing",
+      "desc": "用多核、多机与弹性资源换取可扩展算力，是现代基础设施的骨架。",
+      "base": [
+        {"n": "并发与并行模型", "t": "线程、协程、Actor、消息传递、数据并行", "l": "C++、Go", "s": "OpenMP、MPI、Akka"},
+        {"n": "一致性与 CAP", "t": "线性一致性、顺序一致性、CAP/PACELC、逻辑时钟", "l": "—", "s": "Jepsen"}
+      ],
+      "branches": [
+        {
+          "name": "并行计算与 HPC",
+          "desc": "在共享内存与集群尺度上压榨浮点性能。",
+          "points": [
+            {"n": "共享内存并行", "t": "OpenMP、任务并行、向量化、伪共享", "l": "C++、Fortran", "s": "OpenMP、TBB、Kokkos"},
+            {"n": "消息传递与集群", "t": "MPI、集合通信、拓扑感知、GPU 集群", "l": "—", "s": "MPI+UCX、Slurm、NVSHMEM"}
+          ]
+        },
+        {
+          "name": "分布式协调与共识",
+          "desc": "在会失败、会分区的网络中达成一致，是分布式系统的理论核心。",
+          "points": [
+            {"n": "共识算法", "t": "Paxos、Raft、ZAB、BFT、租约", "l": "Go、Java", "s": "etcd、ZooKeeper、Tendermint"},
+            {"n": "分布式事务与复制", "t": "2PC、Saga、MVCC、CRDT、逻辑复制", "l": "—", "s": "Seata、TiKV、Debezium"}
+          ]
+        },
+        {
+          "name": "云计算与云原生",
+          "desc": "把集群当作一台计算机来编排，实现弹性、自愈与可观测。",
+          "points": [
+            {"n": "容器编排与调度", "t": "Kubernetes、声明式 API、Operator、服务网格", "l": "Go、YAML", "s": "Kubernetes、Istio、Helm、KEDA"},
+            {"n": "Serverless 与边缘", "t": "FaaS、冷启动优化、边缘调度、函数编排", "l": "—", "s": "Knative、OpenFaaS、KubeEdge"}
+          ]
+        },
+        {
+          "name": "分布式计算框架",
+          "desc": "把数据并行与容错细节封装为编程模型。",
+          "points": [
+            {"n": "数据流与批处理", "t": "MapReduce、DAG 调度、Shuffle、内存计算", "l": "Scala、Java", "s": "Spark、Flink、Ray"},
+            {"n": "容错与弹性", "t": "检查点、血缘重算、副本、故障恢复", "l": "—", "s": "—"}
+          ]
+        }
+      ]
+    }
+  ]
+}

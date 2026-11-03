@@ -1,0 +1,146 @@
+{
+  "category": "net",
+  "directions": [
+    {
+      "id": "d_net_net",
+      "name": "计算机网络",
+      "en": "Computer Networks",
+      "desc": "研究异构节点之间如何分组交换、路由与拥塞控制，是互联网与数据中心网络的共同基础。",
+      "base": [
+        {"n": "分层与协议体系", "t": "OSI 七层、TCP/IP 四层、封装/分用、MTU 与分片", "l": "—", "s": "Wireshark、tcpdump"},
+        {"n": "链路与以太网", "t": "帧结构、MAC 寻址、VLAN、ARP、生成树", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "传输与协议体系",
+          "desc": "在不可靠的 IP 之上构建可靠、公平、低时延的数据通道。",
+          "points": [
+            {"n": "可靠传输与拥塞控制", "t": "滑动窗口、重传、RTT 估计、CUBIC/BBR、AQM", "l": "C", "s": "Linux TCP、netem"},
+            {"n": "现代传输协议", "t": "QUIC、HTTP/3、多路复用、0-RTT、连接迁移", "l": "Rust、C++", "s": "quiche、nghttp3、msquic"},
+            {"n": "应用层协议", "t": "DNS、HTTP、gRPC、WebSocket、MQTT", "l": "—", "s": "curl、Envoy、CoreDNS"}
+          ]
+        },
+        {
+          "name": "路由与网络架构",
+          "desc": "决定分组走哪条路，以及数据中心内部如何组织东西向流量。",
+          "points": [
+            {"n": "路由协议", "t": "距离矢量、链路状态、BGP 策略、MPLS/SRv6", "l": "—", "s": "FRRouting、BIRD、Mininet"},
+            {"n": "数据中心网络", "t": "叶脊架构、RDMA、无损以太网、等价多路径", "l": "—", "s": "RoCEv2、InfiniBand、SONiC"},
+            {"n": "内容分发与边缘", "t": "CDN、缓存一致性、Anycast、边缘调度", "l": "—", "s": "Nginx、Varnish、Cloudflare"}
+          ]
+        },
+        {
+          "name": "可编程网络与高性能数据面",
+          "desc": "把网络设备变成可编程的，用软件定义转发行为。",
+          "points": [
+            {"n": "SDN 与 P4", "t": "控制面/数据面分离、P4 流水线、OpenFlow、INT", "l": "P4", "s": "P4Runtime、BMv2、Open vSwitch"},
+            {"n": "内核旁路与协议栈优化", "t": "DPDK、XDP/eBPF、零拷贝、用户态协议栈", "l": "C、eBPF", "s": "DPDK、VPP、Cilium"}
+          ]
+        },
+        {
+          "name": "无线与移动网络",
+          "desc": "面向广播介质、移动性与功耗约束的接入技术。",
+          "points": [
+            {"n": "无线接入", "t": "802.11、5G NR、调度与切换、MIMO", "l": "—", "s": "srsRAN、OpenAirInterface、ns-3"},
+            {"n": "低功耗广域与卫星", "t": "LoRa、NB-IoT、LEO 星座组网、星间链路", "l": "—", "s": "ChirpStack、STK"}
+          ]
+        },
+        {
+          "name": "网络测量与运维",
+          "desc": "看不见的网络无法优化：用测量数据驱动容量规划与故障定位。",
+          "points": [
+            {"n": "测量与遥测", "t": "主动/被动测量、带内遥测、流量分类、根因分析", "l": "—", "s": "perfSONAR、nDPI、Prometheus"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_net_sec",
+      "name": "网络空间安全",
+      "en": "Cybersecurity",
+      "desc": "在持续对抗中保障系统的机密性、完整性与可用性，覆盖系统、应用、数据与人的全链路。",
+      "base": [
+        {"n": "安全模型与威胁建模", "t": "STRIDE、攻击面分析、最小权限、纵深防御", "l": "—", "s": "Microsoft Threat Modeling Tool"}
+      ],
+      "branches": [
+        {
+          "name": "系统与二进制安全",
+          "desc": "在内存与指令层面寻找并利用缺陷，是攻防最硬核的战场。",
+          "points": [
+            {"n": "内存安全与漏洞利用", "t": "栈/堆溢出、UAF、类型混淆、ROP/JOP", "l": "C、汇编", "s": "IDA Pro、Ghidra、pwntools"},
+            {"n": "漏洞挖掘", "t": "覆盖率引导模糊测试、符号执行、污点分析、差分测试", "l": "C++、Python", "s": "AFL++、libFuzzer、angr"},
+            {"n": "系统加固", "t": "ASLR/DEP/CFI、沙箱、SELinux、可信启动", "l": "—", "s": "SELinux、AppArmor、seccomp"}
+          ]
+        },
+        {
+          "name": "Web 与应用安全",
+          "desc": "业务逻辑与身份体系是数据泄露的主要入口。",
+          "points": [
+            {"n": "Web 漏洞与防护", "t": "注入、XSS、SSRF、反序列化、OWASP Top 10", "l": "—", "s": "Burp Suite、OWASP ZAP、Semgrep"},
+            {"n": "身份与访问控制", "t": "OAuth2/OIDC、SAML、零信任、RBAC/ABAC", "l": "—", "s": "Keycloak、OPA、Okta"}
+          ]
+        },
+        {
+          "name": "攻防对抗与威胁情报",
+          "desc": "从单点漏洞走向持续检测、响应与情报运营。",
+          "points": [
+            {"n": "检测与响应", "t": "IDS/IPS、SIEM、EDR、蜜罐、ATT&CK 映射", "l": "—", "s": "Suricata、Wazuh、ELK、TheHive"},
+            {"n": "恶意代码分析", "t": "静态/动态分析、沙箱、YARA 规则、反混淆", "l": "—", "s": "Cuckoo、YARA、CAPA、FLOSS"}
+          ]
+        },
+        {
+          "name": "隐私保护与可信计算",
+          "desc": "让数据在“可用不可见”的前提下产生价值。",
+          "points": [
+            {"n": "隐私增强技术", "t": "差分隐私、联邦学习、安全多方计算、k-匿名", "l": "—", "s": "Opacus、FATE、MP-SPDZ"},
+            {"n": "可信执行环境", "t": "TPM、SGX/TDX、SEV、机密容器、远程证明", "l": "—", "s": "Intel SGX、AMD SEV、Confidential Containers"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_net_crypto",
+      "name": "密码学与隐私计算",
+      "en": "Cryptography & Privacy-Preserving Computation",
+      "desc": "用数学构造为通信与计算提供保密性、认证性与可验证性，是安全体系的可信根。",
+      "base": [
+        {"n": "数论与代数基础", "t": "模运算、群环域、椭圆曲线、格、双线性配对", "l": "—", "s": "SageMath、PARI/GP"}
+      ],
+      "branches": [
+        {
+          "name": "基础密码原语",
+          "desc": "对称、公钥与哈希三类原语构成全部安全协议的积木。",
+          "points": [
+            {"n": "对称密码", "t": "AES、分组模式（GCM/CCM）、认证加密、流密码", "l": "C", "s": "OpenSSL、libsodium"},
+            {"n": "公钥密码", "t": "RSA、ECC、Diffie-Hellman、数字签名", "l": "—", "s": "OpenSSL、BoringSSL"},
+            {"n": "哈希与 MAC", "t": "SHA-2/3、HMAC、Merkle 树、KDF", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "协议与工程",
+          "desc": "把原语组装成可部署的协议，并管理密钥的全生命周期。",
+          "points": [
+            {"n": "安全传输协议", "t": "TLS 1.3、Noise、Signal 双棘轮、证书透明", "l": "—", "s": "OpenSSL、rustls、WireGuard"},
+            {"n": "密钥管理与 PKI", "t": "证书链、CA、HSM、密钥轮换与托管", "l": "—", "s": "cfssl、Vault、HSM/KMS"}
+          ]
+        },
+        {
+          "name": "前沿密码",
+          "desc": "在可验证、可计算、抗量子的方向上扩展密码的边界。",
+          "points": [
+            {"n": "零知识证明", "t": "zk-SNARK/STARK、算术电路、承诺方案、Fiat-Shamir", "l": "Rust", "s": "circom、snarkjs、Halo2、gnark"},
+            {"n": "同态与多方计算", "t": "全同态加密、秘密分享、混淆电路、PSI", "l": "—", "s": "SEAL、OpenFHE、MP-SPDZ"},
+            {"n": "后量子密码", "t": "格密码、编码密码、Kyber/Dilithium、迁移策略", "l": "—", "s": "liboqs、PQClean、OpenSSL 3.5"}
+          ]
+        },
+        {
+          "name": "密码分析",
+          "desc": "攻击是检验密码强度的唯一标准。",
+          "points": [
+            {"n": "经典与侧信道攻击", "t": "差分/线性分析、相关功耗分析、故障注入", "l": "—", "s": "ChipWhisperer、SageMath"}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "category": "ai",
+  "directions": [
+    {
+      "id": "d_ai_kg",
+      "name": "人工智能与知识工程",
+      "en": "Artificial Intelligence & Knowledge Engineering",
+      "desc": "符号主义 AI 的主干：用显式知识表示世界，通过搜索、推理与规划做出决策。",
+      "base": [
+        {"n": "AI 问题求解", "t": "状态空间表示、搜索、博弈树、启发式评估", "l": "Python", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "搜索、规划与决策",
+          "desc": "把决策问题转化为在状态空间中寻找最优路径。",
+          "points": [
+            {"n": "启发式搜索", "t": "A*、IDA*、启发函数设计与可采纳性", "l": "—", "s": "—"},
+            {"n": "自动规划", "t": "PDDL、状态空间规划、蒙特卡洛树搜索、约束满足", "l": "—", "s": "Fast Downward、OR-Tools、MCTS"}
+          ]
+        },
+        {
+          "name": "知识表示与推理",
+          "desc": "让机器以可解释、可推理的方式持有知识。",
+          "points": [
+            {"n": "逻辑与本体", "t": "描述逻辑、OWL、规则引擎、产生式系统", "l": "—", "s": "Protégé、Drools、Apache Jena"},
+            {"n": "不确定性推理", "t": "贝叶斯网、模糊逻辑、证据理论、信念传播", "l": "—", "s": "pgmpy、Pyro"}
+          ]
+        },
+        {
+          "name": "知识图谱",
+          "desc": "以图结构组织事实，支撑语义检索、推荐与推理。",
+          "points": [
+            {"n": "图谱构建", "t": "实体/关系抽取、实体对齐、知识融合、质量控制", "l": "Python", "s": "DeepKE、OpenKE、spaCy"},
+            {"n": "存储与查询", "t": "RDF/属性图模型、SPARQL/Cypher、图计算", "l": "—", "s": "Neo4j、Apache Jena、GraphDB"},
+            {"n": "知识增强生成", "t": "图谱嵌入、GraphRAG、语义检索与重排", "l": "—", "s": "TransE、LangChain、Neo4j"}
+          ]
+        },
+        {
+          "name": "智能体系统",
+          "desc": "把感知、记忆、规划与工具调用组合为可自主完成任务的实体。",
+          "points": [
+            {"n": "智能体架构", "t": "BDI、反应式架构、LLM Agent、工具调用、记忆", "l": "Python", "s": "LangGraph、AutoGen、MCP"},
+            {"n": "多智能体与博弈", "t": "博弈论、机制设计、多智能体强化学习", "l": "—", "s": "PettingZoo、MARLlib、OpenSpiel"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_ai_ml",
+      "name": "机器学习",
+      "en": "Machine Learning",
+      "desc": "从数据中归纳规律：模型、损失、优化与泛化，构成当代 AI 的方法论内核。",
+      "base": [
+        {"n": "学习范式", "t": "监督/无监督/半监督/自监督/强化学习", "l": "Python", "s": "scikit-learn"},
+        {"n": "评估与泛化", "t": "交叉验证、偏差-方差、过拟合、指标设计", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "经典模型",
+          "desc": "在中小规模结构化数据上仍然最强的一类方法。",
+          "points": [
+            {"n": "线性与核方法", "t": "线性/逻辑回归、SVM、正则化、核技巧", "l": "—", "s": "scikit-learn、LIBSVM"},
+            {"n": "树模型与集成", "t": "决策树、随机森林、GBDT、XGBoost/LightGBM", "l": "—", "s": "XGBoost、LightGBM、CatBoost"},
+            {"n": "聚类与降维", "t": "K-means、DBSCAN、GMM、PCA、t-SNE、UMAP", "l": "—", "s": "scikit-learn、UMAP、HDBSCAN"}
+          ]
+        },
+        {
+          "name": "概率与贝叶斯学习",
+          "desc": "用概率分布刻画不确定性，是生成模型与因果推断的桥梁。",
+          "points": [
+            {"n": "隐变量与 EM", "t": "EM 算法、变分推断、混合模型", "l": "—", "s": "PyMC、Pyro、NumPyro"}
+          ]
+        },
+        {
+          "name": "强化学习",
+          "desc": "通过与环境交互的试错信号学习序贯决策策略。",
+          "points": [
+            {"n": "值函数与策略梯度", "t": "MDP、Q-learning、PPO、SAC、离线 RL", "l": "Python", "s": "Gymnasium、Stable-Baselines3、RLlib"},
+            {"n": "探索与信用分配", "t": "内在奖励、模仿学习、分层 RL、多智能体 RL", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "学习理论与可信机器学习",
+          "desc": "回答“为什么能学、学到什么程度、能否被信任”。",
+          "points": [
+            {"n": "泛化理论", "t": "VC 维、Rademacher 复杂度、泛化界、双下降", "l": "—", "s": "—"},
+            {"n": "可解释与鲁棒", "t": "SHAP、LIME、对抗鲁棒、公平性、不确定性估计", "l": "—", "s": "SHAP、Captum、ART"},
+            {"n": "AutoML", "t": "超参搜索、神经架构搜索、元学习", "l": "—", "s": "Optuna、Ray Tune、AutoGluon"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_ai_dl",
+      "name": "深度学习与大模型",
+      "en": "Deep Learning & Foundation Models",
+      "desc": "以深层神经网络与大规模预训练为核心，把“规模”转化为通用能力，是当前 AI 的主战场。",
+      "base": [
+        {"n": "神经网络基础", "t": "反向传播、激活函数、初始化、归一化、正则化", "l": "Python", "s": "PyTorch、TensorFlow、JAX"}
+      ],
+      "branches": [
+        {
+          "name": "网络架构",
+          "desc": "用归纳偏置匹配数据模态：卷积管图像、注意力管序列。",
+          "points": [
+            {"n": "卷积与视觉骨干", "t": "CNN、感受野、ResNet、ViT、ConvNeXt", "l": "—", "s": "timm、torchvision"},
+            {"n": "序列与注意力", "t": "RNN/LSTM、注意力机制、Transformer、状态空间模型", "l": "—", "s": "HuggingFace Transformers、Mamba"}
+          ]
+        },
+        {
+          "name": "生成模型",
+          "desc": "学习数据分布，从而生成新的样本。",
+          "points": [
+            {"n": "生成与扩散", "t": "VAE、GAN、扩散模型、流匹配、采样加速", "l": "—", "s": "Diffusers、StyleGAN、ComfyUI"}
+          ]
+        },
+        {
+          "name": "大语言模型",
+          "desc": "以海量语料预训练 + 对齐，获得通用语言与推理能力。",
+          "points": [
+            {"n": "预训练与微调", "t": "自监督目标、指令微调、RLHF/DPO、LoRA/PEFT", "l": "—", "s": "PEFT、TRL、DeepSpeed"},
+            {"n": "分布式训练", "t": "数据/张量/流水并行、ZeRO、混合精度、检查点", "l": "—", "s": "Megatron-LM、DeepSpeed、FSDP"},
+            {"n": "推理与部署", "t": "KV Cache、量化、投机解码、连续批处理", "l": "C++、CUDA", "s": "vLLM、TensorRT-LLM、llama.cpp"},
+            {"n": "评测与对齐", "t": "基准评测、红队测试、越狱防御、价值观对齐", "l": "—", "s": "HELM、Inspect、Garak"}
+          ]
+        },
+        {
+          "name": "多模态与检索增强",
+          "desc": "让模型同时理解文本、图像、语音，并连接外部知识。",
+          "points": [
+            {"n": "多模态模型", "t": "CLIP、视觉-语言对齐、视频生成、跨模态检索", "l": "—", "s": "OpenCLIP、LLaVA、Qwen-VL"},
+            {"n": "RAG 与工具调用", "t": "向量检索、重排、函数调用、Agent 编排", "l": "Python", "s": "LlamaIndex、LangChain、Milvus"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_ai_perc",
+      "name": "感知智能",
+      "en": "Perception: Vision, Speech & Language",
+      "desc": "让机器看懂图像、听懂语音、理解语言，是 AI 落地最成熟、产业规模最大的方向。",
+      "base": [
+        {"n": "信号与特征", "t": "图像/语音信号、特征工程、数据标注与增强", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "计算机视觉",
+          "desc": "从像素中提取语义、几何与运动信息。",
+          "points": [
+            {"n": "检测与分割", "t": "骨干网络、FPN、Anchor-free、语义/实例/全景分割", "l": "Python", "s": "MMDetection、Detectron2、YOLO、SAM"},
+            {"n": "3D 视觉与 SLAM", "t": "多视图几何、点云、VIO、稠密重建", "l": "C++", "s": "COLMAP、Open3D、ORB-SLAM3"},
+            {"n": "视频与跟踪", "t": "时序建模、多目标跟踪、动作识别、视频理解", "l": "—", "s": "MMAction2、ByteTrack、PyTorchVideo"}
+          ]
+        },
+        {
+          "name": "语音与音频",
+          "desc": "把声波转成文字、把文字合成语音，并处理真实环境噪声。",
+          "points": [
+            {"n": "语音识别", "t": "声学模型、CTC、端到端、流式识别、热词", "l": "—", "s": "Whisper、Kaldi、FunASR"},
+            {"n": "语音合成与增强", "t": "TTS、声码器、降噪、语音分离", "l": "—", "s": "VITS、HiFi-GAN、Demucs"}
+          ]
+        },
+        {
+          "name": "自然语言处理",
+          "desc": "让机器理解与生成人类语言，是 LLM 的直接前身。",
+          "points": [
+            {"n": "基础任务", "t": "分词、NER、句法分析、机器翻译、文本分类", "l": "—", "s": "spaCy、fairseq、Marian"},
+            {"n": "信息抽取与问答", "t": "关系抽取、文档理解、开放域问答", "l": "—", "s": "LayoutLM、PaddleOCR、Elasticsearch"}
+          ]
+        },
+        {
+          "name": "具身感知",
+          "desc": "把视觉与语言连接到动作，让感知服务于行动。",
+          "points": [
+            {"n": "视觉-语言-动作", "t": "VLA 模型、Sim2Real、操作感知、空间推理", "l": "—", "s": "OpenVLA、Isaac Sim、RT-2 类架构"}
+          ]
+        }
+      ]
+    }
+  ]
+}

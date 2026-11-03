@@ -1,0 +1,2782 @@
+{
+ "title": "计算机科学与技术知识图谱",
+ "subtitle": "专业分类体系 · 衍生方向 · 技术组成",
+ "version": "2026.11",
+ "categories": [
+  {
+   "id": "math",
+   "name": "数学与理论基础",
+   "short": "数理基础",
+   "code": "MATH",
+   "color": "#7AA2F7",
+   "desc": "计算机科学的公理化根基：离散结构、可计算性、概率统计与数值优化。它不直接产出系统，但决定了哪些问题可解、可高效求解、可被证明。",
+   "directions": [
+    {
+     "id": "d_math_found",
+     "name": "离散数学与计算理论",
+     "en": "Discrete Mathematics & Theory of Computation",
+     "desc": "计算机科学的公理层：用离散结构、形式逻辑与可计算性理论界定“什么问题可以被计算、被证明、被高效求解”。",
+     "base": [
+      {
+       "n": "集合、关系与序",
+       "t": "集合论、等价关系、偏序与格、映射",
+       "l": "—",
+       "s": "—"
+      },
+      {
+       "n": "数理逻辑基础",
+       "t": "命题逻辑、谓词逻辑、推理规则、模型与语义",
+       "l": "—",
+       "s": "—"
+      },
+      {
+       "n": "自动机与形式语言",
+       "t": "DFA/NFA、正则语言、上下文无关文法、PDA",
+       "l": "—",
+       "s": "JFLAP、ANTLR"
+      }
+     ],
+     "branches": [
+      {
+       "name": "组合数学与图论",
+       "desc": "计数与离散结构的理论工具，是算法分析与网络科学的共同语言。",
+       "points": [
+        {
+         "n": "图论与网络流",
+         "t": "连通性、匹配、平面图、最大流最小割定理",
+         "l": "—",
+         "s": "NetworkX、LEMON、igraph"
+        },
+        {
+         "n": "组合计数与生成函数",
+         "t": "容斥原理、Polya 计数、递推与渐近估计",
+         "l": "—",
+         "s": "SageMath、Mathematica"
+        }
+       ],
+       "id": "d_math_found::组合数学与图论"
+      },
+      {
+       "name": "形式逻辑与自动推理",
+       "desc": "把推理过程形式化为可机械检查的符号系统，支撑程序验证与知识推理。",
+       "points": [
+        {
+         "n": "命题与一阶逻辑",
+         "t": "归结原理、Herbrand 域、可满足性与完备性",
+         "l": "—",
+         "s": "Z3、Vampire、E Prover"
+        },
+        {
+         "n": "类型论与 λ 演算",
+         "t": "Curry–Howard 对应、依值类型、范畴语义",
+         "l": "Haskell、Agda",
+         "s": "Coq、Lean 4、Agda"
+        }
+       ],
+       "id": "d_math_found::形式逻辑与自动推理"
+      },
+      {
+       "name": "可计算性与计算复杂性",
+       "desc": "划定可计算与可高效计算的边界，为算法设计与密码学提供假设基础。",
+       "points": [
+        {
+         "n": "可计算性理论",
+         "t": "图灵机、丘奇-图灵论题、停机问题、归约",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "复杂性类与下界",
+         "t": "P/NP/PSPACE、NP 完全性、参数化复杂度、通信复杂度",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "困难问题与密码假设",
+         "t": "整数分解、离散对数、格上困难问题",
+         "l": "—",
+         "s": "SageMath、PARI/GP"
+        }
+       ],
+       "id": "d_math_found::可计算性与计算复杂性"
+      }
+     ],
+     "cat": "math",
+     "disp": "离散数学\n与计算理论",
+     "nBase": 3,
+     "nBranch": 3,
+     "nPoint": 10,
+     "links": []
+    },
+    {
+     "id": "d_math_algo",
+     "name": "算法与数据结构",
+     "en": "Algorithms & Data Structures",
+     "desc": "研究问题求解的精确方法与数据组织方式，是全部工程能力的公共底座。",
+     "base": [
+      {
+       "n": "复杂度分析",
+       "t": "渐进记号、摊还分析、主定理、最坏/平均情况",
+       "l": "—",
+       "s": "—"
+      },
+      {
+       "n": "线性结构",
+       "t": "数组、链表、栈、队列、并查集、单调栈",
+       "l": "C++、Java",
+       "s": "STL、JDK Collections"
+      },
+      {
+       "n": "树与堆",
+       "t": "二叉树、AVL/红黑树、B/B+ 树、堆与优先队列",
+       "l": "—",
+       "s": "std::map、TreeMap"
+      }
+     ],
+     "branches": [
+      {
+       "name": "算法设计范式",
+       "desc": "把问题结构化归约到已知可解形式的四类通用策略。",
+       "points": [
+        {
+         "n": "分治与减治",
+         "t": "主定理、归并/快速排序、最近点对、快速幂",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "动态规划",
+         "t": "最优子结构、状态设计、滚动数组、状压/数位 DP",
+         "l": "C++",
+         "s": "LeetCode、Codeforces"
+        },
+        {
+         "n": "贪心与拟阵",
+         "t": "交换论证、拟阵、Huffman 编码、区间调度",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_math_algo::算法设计范式"
+      },
+      {
+       "name": "图算法与网络优化",
+       "desc": "面向关系型数据的经典算法族，广泛用于路径规划、调度与匹配。",
+       "points": [
+        {
+         "n": "最短路与生成树",
+         "t": "Dijkstra、Bellman-Ford、Floyd、Kruskal/Prim",
+         "l": "—",
+         "s": "NetworkX、Boost Graph"
+        },
+        {
+         "n": "网络流与匹配",
+         "t": "最大流/最小费用流、匈牙利算法、KM 算法",
+         "l": "—",
+         "s": "LEMON、OR-Tools"
+        }
+       ],
+       "id": "d_math_algo::图算法与网络优化"
+      },
+      {
+       "name": "字符串与计算几何",
+       "desc": "处理文本与空间数据的专用索引与几何算法。",
+       "points": [
+        {
+         "n": "字符串匹配与索引",
+         "t": "KMP、AC 自动机、后缀数组/自动机、FM-index",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "计算几何",
+         "t": "凸包、扫描线、半平面交、Delaunay/Voronoi",
+         "l": "—",
+         "s": "CGAL、Shapely"
+        }
+       ],
+       "id": "d_math_algo::字符串与计算几何"
+      },
+      {
+       "name": "难解问题与随机算法",
+       "desc": "在 NP 难问题面前，用近似、随机化与精确求解器换取可用的答案。",
+       "points": [
+        {
+         "n": "近似与在线算法",
+         "t": "近似比、PTAS、竞争比、随机化算法",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "精确求解器建模",
+         "t": "分支限界、SAT/CP/SMT 建模、整数规划",
+         "l": "Python",
+         "s": "OR-Tools CP-SAT、Gurobi、MiniZinc"
+        }
+       ],
+       "id": "d_math_algo::难解问题与随机算法"
+      }
+     ],
+     "cat": "math",
+     "disp": "算法与\n数据结构",
+     "nBase": 3,
+     "nBranch": 4,
+     "nPoint": 12,
+     "links": []
+    },
+    {
+     "id": "d_math_prob",
+     "name": "概率统计与信息论",
+     "en": "Probability, Statistics & Information Theory",
+     "desc": "为不确定性建模：从随机变量、统计推断到熵与编码，是机器学习与通信的理论母语。",
+     "base": [
+      {
+       "n": "概率分布与极限定理",
+       "t": "常见分布、大数定律、中心极限定理",
+       "l": "—",
+       "s": "SciPy.stats、R"
+      },
+      {
+       "n": "随机变量与期望",
+       "t": "条件期望、方差、协方差、矩母函数",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "随机过程与统计推断",
+       "desc": "描述随时间演化的随机系统，并从样本中做出可靠结论。",
+       "points": [
+        {
+         "n": "马尔可夫链与排队论",
+         "t": "转移矩阵、平稳分布、M/M/1 与生灭过程",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "统计推断与实验设计",
+         "t": "极大似然、假设检验、置信区间、A/B 实验",
+         "l": "R、Python",
+         "s": "statsmodels、pingouin"
+        }
+       ],
+       "id": "d_math_prob::随机过程与统计推断"
+      },
+      {
+       "name": "贝叶斯方法与概率图模型",
+       "desc": "用先验与图结构表达不确定性，是现代生成模型的思想源头。",
+       "points": [
+        {
+         "n": "贝叶斯推断",
+         "t": "先验/后验、共轭分布、MCMC、变分推断",
+         "l": "—",
+         "s": "PyMC、Stan、NumPyro"
+        },
+        {
+         "n": "概率图模型",
+         "t": "贝叶斯网、MRF、HMM、CRF、信念传播",
+         "l": "—",
+         "s": "pgmpy、Pyro"
+        }
+       ],
+       "id": "d_math_prob::贝叶斯方法与概率图模型"
+      },
+      {
+       "name": "信息论与编码",
+       "desc": "量化信息与信道极限，直接指导压缩与通信系统设计。",
+       "points": [
+        {
+         "n": "熵与互信息",
+         "t": "熵、KL 散度、信道容量、率失真理论",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "信源与信道编码",
+         "t": "Huffman/算术编码、LDPC、Turbo、极化码",
+         "l": "C/C++",
+         "s": "5G NR 标准实现、FFmpeg"
+        }
+       ],
+       "id": "d_math_prob::信息论与编码"
+      },
+      {
+       "name": "因果推断",
+       "desc": "从相关走向因果，是实验科学、推荐与政策评估的方法论。",
+       "points": [
+        {
+         "n": "因果图与可识别性",
+         "t": "DAG、后门准则、do-演算、工具变量",
+         "l": "—",
+         "s": "DoWhy、EconML、CausalML"
+        },
+        {
+         "n": "观察性研究",
+         "t": "倾向得分、双重差分、断点回归、合成控制",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_math_prob::因果推断"
+      }
+     ],
+     "cat": "math",
+     "disp": "概率统计\n与信息论",
+     "nBase": 2,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": []
+    },
+    {
+     "id": "d_math_num",
+     "name": "数值计算与最优化",
+     "en": "Numerical Computing & Optimization",
+     "desc": "用有限精度浮点逼近连续数学，并为机器学习、仿真与运筹提供求解引擎。",
+     "base": [
+      {
+       "n": "误差与数值稳定性",
+       "t": "舍入误差、条件数、病态问题、稳定性分析",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "数值线性代数与微分方程",
+       "desc": "科学计算的两大基本原语：解线性系统与解微分方程。",
+       "points": [
+        {
+         "n": "矩阵分解与迭代法",
+         "t": "LU/QR/SVD、共轭梯度、Krylov 子空间",
+         "l": "Fortran、C++",
+         "s": "LAPACK、BLAS、Eigen"
+        },
+        {
+         "n": "微分方程数值解",
+         "t": "有限差分、有限元、谱方法、刚性方程",
+         "l": "—",
+         "s": "FEniCS、OpenFOAM、PETSc"
+        }
+       ],
+       "id": "d_math_num::数值线性代数与微分方程"
+      },
+      {
+       "name": "凸优化与运筹",
+       "desc": "把决策问题写成可求解的优化模型，并给出最优性证书。",
+       "points": [
+        {
+         "n": "凸优化理论",
+         "t": "凸集、对偶、KKT 条件、内点法",
+         "l": "—",
+         "s": "CVXPY、Mosek、Convex.jl"
+        },
+        {
+         "n": "整数与组合优化",
+         "t": "分支定界、割平面、列生成、启发式",
+         "l": "—",
+         "s": "Gurobi、CPLEX、OR-Tools"
+        }
+       ],
+       "id": "d_math_num::凸优化与运筹"
+      },
+      {
+       "name": "机器学习中的优化",
+       "desc": "高维非凸随机优化，是深度学习可训练性的工程核心。",
+       "points": [
+        {
+         "n": "一阶与二阶方法",
+         "t": "SGD、动量、Adam、L-BFGS、ADMM",
+         "l": "—",
+         "s": "PyTorch、JAX、Optax"
+        },
+        {
+         "n": "自动微分",
+         "t": "前向/反向模式、计算图、梯度检查点",
+         "l": "—",
+         "s": "JAX、autograd、Tapenade"
+        }
+       ],
+       "id": "d_math_num::机器学习中的优化"
+      },
+      {
+       "name": "科学计算软件栈",
+       "desc": "把数值算法落到稀疏、并行、可移植的工业级库上。",
+       "points": [
+        {
+         "n": "稀疏矩阵与并行",
+         "t": "稀疏存储格式、区域分解、GPU 加速",
+         "l": "—",
+         "s": "PETSc、Trilinos、cuSPARSE"
+        },
+        {
+         "n": "符号计算",
+         "t": "符号积分、多项式算法、精确算术",
+         "l": "—",
+         "s": "SymPy、Mathematica、Maple"
+        }
+       ],
+       "id": "d_math_num::科学计算软件栈"
+      }
+     ],
+     "cat": "math",
+     "disp": "数值计算\n与最优化",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": []
+    }
+   ]
+  },
+  {
+   "id": "sys",
+   "name": "计算机系统与体系结构",
+   "short": "系统结构",
+   "code": "SYS",
+   "color": "#F7768E",
+   "desc": "从逻辑门、指令集、操作系统到分布式集群，研究如何用硬件与系统软件把算力高效、可靠地交付给上层应用。",
+   "directions": [
+    {
+     "id": "d_sys_arch",
+     "name": "数字逻辑与计算机体系结构",
+     "en": "Digital Logic & Computer Architecture",
+     "desc": "从逻辑门到处理器微架构：定义计算的硬件形态，决定性能、能效与可编程性的边界。",
+     "base": [
+      {
+       "n": "布尔代数与逻辑门",
+       "t": "组合逻辑、卡诺图化简、时序逻辑、有限状态机",
+       "l": "Verilog",
+       "s": "Logisim、Vivado"
+      },
+      {
+       "n": "数据表示与运算",
+       "t": "补码、IEEE 754 浮点、定点数、溢出与舍入",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "处理器微架构",
+       "desc": "在指令集之下挖掘指令级并行，是 CPU 性能的主要来源。",
+       "points": [
+        {
+         "n": "指令集与流水线",
+         "t": "RISC/CISC、五级流水、数据冒险与旁路、分支预测",
+         "l": "汇编",
+         "s": "RISC-V、ARMv9、x86-64"
+        },
+        {
+         "n": "乱序执行与超标量",
+         "t": "寄存器重命名、保留站、推测执行、SIMD/AVX",
+         "l": "—",
+         "s": "gem5、Sniper、uarch-bench"
+        }
+       ],
+       "id": "d_sys_arch::处理器微架构"
+      },
+      {
+       "name": "存储层次与互连",
+       "desc": "用多级缓存与互连网络弥合 CPU 与内存的巨大速度鸿沟。",
+       "points": [
+        {
+         "n": "Cache 与一致性",
+         "t": "映射与替换策略、MESI/MOESI、内存序模型",
+         "l": "—",
+         "s": "CACTI、Ramulator、CHAMP"
+        },
+        {
+         "n": "虚拟内存与 IO 互连",
+         "t": "页表与 TLB、DMA、PCIe、片上网络 NoC",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_sys_arch::存储层次与互连"
+      },
+      {
+       "name": "加速器与专用架构",
+       "desc": "当通用 CPU 失效时，用领域专用架构换取数量级的能效比。",
+       "points": [
+        {
+         "n": "GPU 与 GPGPU",
+         "t": "SIMT、warp 调度、共享内存、Tensor Core",
+         "l": "CUDA、OpenCL",
+         "s": "CUDA、ROCm、Triton"
+        },
+        {
+         "n": "领域专用架构 DSA",
+         "t": "脉动阵列、数据流架构、量化、存算一体",
+         "l": "—",
+         "s": "TPU/NPU、Vitis HLS、TVM"
+        }
+       ],
+       "id": "d_sys_arch::加速器与专用架构"
+      },
+      {
+       "name": "硬件设计与验证",
+       "desc": "把架构变成可流片、可验证的 RTL 与 SoC。",
+       "points": [
+        {
+         "n": "RTL 设计与验证",
+         "t": "SystemVerilog、UVM、形式验证、时序收敛",
+         "l": "SystemVerilog、Chisel",
+         "s": "Verilator、JasperGold、Vivado"
+        },
+        {
+         "n": "开源芯片生态",
+         "t": "RISC-V 扩展、SoC 集成、FPGA 原型验证",
+         "l": "—",
+         "s": "Chipyard、OpenROAD、FuseSoC"
+        }
+       ],
+       "id": "d_sys_arch::硬件设计与验证"
+      }
+     ],
+     "cat": "sys",
+     "disp": "数字逻辑与\n体系结构",
+     "nBase": 2,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": [
+      1
+     ]
+    },
+    {
+     "id": "d_sys_os",
+     "name": "操作系统",
+     "en": "Operating Systems",
+     "desc": "把裸硬件抽象为进程、内存、文件与设备，是所有上层软件运行时的宿主。",
+     "base": [
+      {
+       "n": "中断与系统调用",
+       "t": "中断/异常、特权级切换、syscall 接口、信号",
+       "l": "C",
+       "s": "Linux、strace"
+      },
+      {
+       "n": "内核结构",
+       "t": "宏内核/微内核、可加载模块、eBPF 扩展",
+       "l": "C、Rust",
+       "s": "Linux、eBPF"
+      }
+     ],
+     "branches": [
+      {
+       "name": "进程与并发",
+       "desc": "在有限核上调度海量任务，并保证共享状态的一致与前进。",
+       "points": [
+        {
+         "n": "CPU 调度",
+         "t": "CFS、实时调度（FIFO/RR/EDF）、多核负载均衡",
+         "l": "C",
+         "s": "Linux scheduler、perf sched"
+        },
+        {
+         "n": "同步与并发控制",
+         "t": "互斥锁、信号量、条件变量、RCU、无锁数据结构",
+         "l": "C++",
+         "s": "futex、std::atomic、并发 sanitizer"
+        }
+       ],
+       "id": "d_sys_os::进程与并发"
+      },
+      {
+       "name": "内存与文件系统",
+       "desc": "管理物理内存的分配回收，并把块设备组织为层次化命名空间。",
+       "points": [
+        {
+         "n": "虚拟内存管理",
+         "t": "分页、缺页异常、SLAB/SLUB、页面回收与交换",
+         "l": "C",
+         "s": "Linux MM、jemalloc、mimalloc"
+        },
+        {
+         "n": "文件系统",
+         "t": "inode、日志、VFS、写时复制、FUSE",
+         "l": "C",
+         "s": "ext4、XFS、Btrfs、ZFS"
+        }
+       ],
+       "id": "d_sys_os::内存与文件系统"
+      },
+      {
+       "name": "虚拟化与容器",
+       "desc": "以硬件辅助或内核命名空间实现资源隔离与多租户。",
+       "points": [
+        {
+         "n": "硬件虚拟化",
+         "t": "Hypervisor、VT-x/AMD-V、影子页表、SR-IOV",
+         "l": "C",
+         "s": "KVM、Xen、QEMU、Firecracker"
+        },
+        {
+         "n": "容器隔离",
+         "t": "namespace、cgroup v2、UnionFS、seccomp、能力集",
+         "l": "Go",
+         "s": "Docker、containerd、runc、Podman"
+        }
+       ],
+       "id": "d_sys_os::虚拟化与容器"
+      },
+      {
+       "name": "实时与嵌入式系统",
+       "desc": "在确定的时间内响应事件，是工业控制与汽车电子的前提。",
+       "points": [
+        {
+         "n": "实时调度",
+         "t": "优先级反转、WCET 分析、可调度性判定",
+         "l": "C",
+         "s": "FreeRTOS、Zephyr、PREEMPT_RT"
+        },
+        {
+         "n": "驱动与功耗管理",
+         "t": "设备树、中断下半部、DVFS、休眠唤醒",
+         "l": "C",
+         "s": "Linux driver model、ACPI"
+        }
+       ],
+       "id": "d_sys_os::实时与嵌入式系统"
+      }
+     ],
+     "cat": "sys",
+     "disp": "操作系统",
+     "nBase": 2,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": []
+    },
+    {
+     "id": "d_sys_comp",
+     "name": "编译原理与程序语言",
+     "en": "Compilers & Programming Languages",
+     "desc": "把人类可读的语言翻译为高效机器码，并在语言层提供类型安全与抽象能力。",
+     "base": [
+      {
+       "n": "形式语言与文法",
+       "t": "正则表达式、上下文无关文法、属性文法",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "编译前端",
+       "desc": "从字符流到带类型标注的抽象语法树。",
+       "points": [
+        {
+         "n": "词法与语法分析",
+         "t": "正则/DFA、LL/LR 分析、AST 构建、错误恢复",
+         "l": "C++、Rust",
+         "s": "ANTLR、Bison、Flex"
+        },
+        {
+         "n": "语义分析与类型系统",
+         "t": "类型检查、Hindley-Milner 推断、泛型、所有权与借用",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_sys_comp::编译前端"
+      },
+      {
+       "name": "中端优化与后端",
+       "desc": "在保持语义的前提下重写程序，使其在目标机器上跑得更快。",
+       "points": [
+        {
+         "n": "中间表示",
+         "t": "三地址码、SSA 形式、控制流图、多级方言",
+         "l": "—",
+         "s": "LLVM IR、MLIR、GIMPLE"
+        },
+        {
+         "n": "优化与代码生成",
+         "t": "常量传播、内联、循环变换、寄存器分配、指令调度",
+         "l": "C++",
+         "s": "LLVM、GCC、Cranelift"
+        }
+       ],
+       "id": "d_sys_comp::中端优化与后端"
+      },
+      {
+       "name": "运行时与 JIT",
+       "desc": "把编译推迟到运行期，用动态信息换取更好的代码。",
+       "points": [
+        {
+         "n": "虚拟机与垃圾回收",
+         "t": "解释执行、JIT 分层编译、分代/并发 GC",
+         "l": "—",
+         "s": "HotSpot、V8、GraalVM"
+        },
+        {
+         "n": "动态语言运行时",
+         "t": "内联缓存、去优化、逃逸分析、隐藏类",
+         "l": "—",
+         "s": "V8、PyPy、LuaJIT"
+        }
+       ],
+       "id": "d_sys_comp::运行时与 JIT"
+      },
+      {
+       "name": "程序分析与验证",
+       "desc": "在不确定输入下证明程序性质，是软件可信的最后一道防线。",
+       "points": [
+        {
+         "n": "静态分析",
+         "t": "数据流分析、抽象解释、指针分析、污点分析",
+         "l": "—",
+         "s": "Soot、Infer、SVF、CodeQL"
+        },
+        {
+         "n": "形式验证",
+         "t": "模型检验、分离逻辑、精化演算、翻译验证",
+         "l": "Coq、TLA+",
+         "s": "CompCert、Frama-C、TLA+、Dafny"
+        }
+       ],
+       "id": "d_sys_comp::程序分析与验证"
+      }
+     ],
+     "cat": "sys",
+     "disp": "编译原理\n与程序语言",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      9
+     ]
+    },
+    {
+     "id": "d_sys_dist",
+     "name": "并行分布式系统与云计算",
+     "en": "Parallel & Distributed Systems, Cloud Computing",
+     "desc": "用多核、多机与弹性资源换取可扩展算力，是现代基础设施的骨架。",
+     "base": [
+      {
+       "n": "并发与并行模型",
+       "t": "线程、协程、Actor、消息传递、数据并行",
+       "l": "C++、Go",
+       "s": "OpenMP、MPI、Akka"
+      },
+      {
+       "n": "一致性与 CAP",
+       "t": "线性一致性、顺序一致性、CAP/PACELC、逻辑时钟",
+       "l": "—",
+       "s": "Jepsen"
+      }
+     ],
+     "branches": [
+      {
+       "name": "并行计算与 HPC",
+       "desc": "在共享内存与集群尺度上压榨浮点性能。",
+       "points": [
+        {
+         "n": "共享内存并行",
+         "t": "OpenMP、任务并行、向量化、伪共享",
+         "l": "C++、Fortran",
+         "s": "OpenMP、TBB、Kokkos"
+        },
+        {
+         "n": "消息传递与集群",
+         "t": "MPI、集合通信、拓扑感知、GPU 集群",
+         "l": "—",
+         "s": "MPI+UCX、Slurm、NVSHMEM"
+        }
+       ],
+       "id": "d_sys_dist::并行计算与 HPC"
+      },
+      {
+       "name": "分布式协调与共识",
+       "desc": "在会失败、会分区的网络中达成一致，是分布式系统的理论核心。",
+       "points": [
+        {
+         "n": "共识算法",
+         "t": "Paxos、Raft、ZAB、BFT、租约",
+         "l": "Go、Java",
+         "s": "etcd、ZooKeeper、Tendermint"
+        },
+        {
+         "n": "分布式事务与复制",
+         "t": "2PC、Saga、MVCC、CRDT、逻辑复制",
+         "l": "—",
+         "s": "Seata、TiKV、Debezium"
+        }
+       ],
+       "id": "d_sys_dist::分布式协调与共识"
+      },
+      {
+       "name": "云计算与云原生",
+       "desc": "把集群当作一台计算机来编排，实现弹性、自愈与可观测。",
+       "points": [
+        {
+         "n": "容器编排与调度",
+         "t": "Kubernetes、声明式 API、Operator、服务网格",
+         "l": "Go、YAML",
+         "s": "Kubernetes、Istio、Helm、KEDA"
+        },
+        {
+         "n": "Serverless 与边缘",
+         "t": "FaaS、冷启动优化、边缘调度、函数编排",
+         "l": "—",
+         "s": "Knative、OpenFaaS、KubeEdge"
+        }
+       ],
+       "id": "d_sys_dist::云计算与云原生"
+      },
+      {
+       "name": "分布式计算框架",
+       "desc": "把数据并行与容错细节封装为编程模型。",
+       "points": [
+        {
+         "n": "数据流与批处理",
+         "t": "MapReduce、DAG 调度、Shuffle、内存计算",
+         "l": "Scala、Java",
+         "s": "Spark、Flink、Ray"
+        },
+        {
+         "n": "容错与弹性",
+         "t": "检查点、血缘重算、副本、故障恢复",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_sys_dist::分布式计算框架"
+      }
+     ],
+     "cat": "sys",
+     "disp": "并行分布式\n与云计算",
+     "nBase": 2,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": [
+      5,
+      10
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sw",
+   "name": "软件与数据工程",
+   "short": "软件数据",
+   "code": "SW",
+   "color": "#9ECE6A",
+   "desc": "研究大规模软件的构造、演化与数据管理：软件工程方法、数据库内核、大数据计算、图形交互与可视化。",
+   "directions": [
+    {
+     "id": "d_sw_se",
+     "name": "软件工程",
+     "en": "Software Engineering",
+     "desc": "以工程化方法构建、演化与保障大规模软件：需求、架构、过程、质量与可信性。",
+     "base": [
+      {
+       "n": "软件生命周期",
+       "t": "瀑布/敏捷/迭代、需求到运维的全流程",
+       "l": "—",
+       "s": "Jira、Confluence"
+      }
+     ],
+     "branches": [
+      {
+       "name": "需求与架构",
+       "desc": "在写第一行代码之前决定系统的形状与边界。",
+       "points": [
+        {
+         "n": "需求工程",
+         "t": "用例、用户故事、领域建模、验收标准",
+         "l": "—",
+         "s": "Jira、Confluence、Miro"
+        },
+        {
+         "n": "软件架构",
+         "t": "分层/微服务/事件驱动、DDD、CQRS、架构权衡",
+         "l": "—",
+         "s": "Spring Cloud、gRPC、Kafka"
+        },
+        {
+         "n": "设计模式与重构",
+         "t": "SOLID、GoF 模式、坏味道识别、技术债度量",
+         "l": "Java、C#",
+         "s": "—"
+        }
+       ],
+       "id": "d_sw_se::需求与架构"
+      },
+      {
+       "name": "开发过程与 DevOps",
+       "desc": "让变更可以小步、频繁、安全地到达生产环境。",
+       "points": [
+        {
+         "n": "版本与协作",
+         "t": "Git 分支模型、代码评审、主干开发、语义化版本",
+         "l": "—",
+         "s": "Git、GitHub/GitLab、Gerrit"
+        },
+        {
+         "n": "CI/CD 流水线",
+         "t": "持续集成、制品管理、灰度发布、回滚策略",
+         "l": "YAML",
+         "s": "Jenkins、GitLab CI、Argo CD"
+        },
+        {
+         "n": "可观测性",
+         "t": "日志/指标/链路追踪、SLO 与错误预算",
+         "l": "—",
+         "s": "OpenTelemetry、Prometheus、Grafana、Jaeger"
+        }
+       ],
+       "id": "d_sw_se::开发过程与 DevOps"
+      },
+      {
+       "name": "质量保障",
+       "desc": "用测试与静态分析把缺陷挡在发布之前。",
+       "points": [
+        {
+         "n": "测试体系",
+         "t": "单元/集成/契约/端到端、模糊测试、覆盖率",
+         "l": "—",
+         "s": "JUnit、pytest、Playwright、Jest"
+        },
+        {
+         "n": "静态分析与度量",
+         "t": "静态检查、圈复杂度、缺陷预测、变异测试",
+         "l": "—",
+         "s": "SonarQube、ESLint、Coverity、PIT"
+        }
+       ],
+       "id": "d_sw_se::质量保障"
+      },
+      {
+       "name": "形式化与可信软件",
+       "desc": "对安全关键系统，用数学证明替代抽样测试。",
+       "points": [
+        {
+         "n": "形式化方法",
+         "t": "模型检验、定理证明、精化、设计契约",
+         "l": "TLA+、Coq",
+         "s": "TLA+、Alloy、SPIN、Dafny"
+        },
+        {
+         "n": "供应链安全",
+         "t": "SBOM、依赖治理、许可证合规、签名验证",
+         "l": "—",
+         "s": "SPDX、Dependabot、Snyk、Sigstore"
+        }
+       ],
+       "id": "d_sw_se::形式化与可信软件"
+      }
+     ],
+     "cat": "sw",
+     "disp": "软件工程",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 11,
+     "links": []
+    },
+    {
+     "id": "d_sw_db",
+     "name": "数据库与数据管理",
+     "en": "Database Systems & Data Management",
+     "desc": "以数据模型、事务与查询优化为核心，管理持久化数据并提供高并发访问。",
+     "base": [
+      {
+       "n": "数据模型",
+       "t": "关系/文档/图/键值/时序/列式模型",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "关系数据库",
+       "desc": "以关系代数为基础，用声明式 SQL 描述“要什么”而非“怎么做”。",
+       "points": [
+        {
+         "n": "关系模型与 SQL",
+         "t": "关系代数、范式与函数依赖、SQL 标准、窗口函数",
+         "l": "SQL",
+         "s": "PostgreSQL、MySQL、SQLite"
+        },
+        {
+         "n": "查询优化与执行",
+         "t": "代价模型、执行计划、连接算法、列式与向量化执行",
+         "l": "C++",
+         "s": "PostgreSQL Planner、Calcite、DuckDB"
+        }
+       ],
+       "id": "d_sw_db::关系数据库"
+      },
+      {
+       "name": "存储引擎与事务",
+       "desc": "在磁盘与内存之间组织数据，并保证并发下的正确性。",
+       "points": [
+        {
+         "n": "索引与存储结构",
+         "t": "B+ 树、LSM 树、缓冲池、WAL、压缩编码",
+         "l": "C++",
+         "s": "InnoDB、RocksDB、LevelDB"
+        },
+        {
+         "n": "事务与并发控制",
+         "t": "ACID、两阶段锁、MVCC、隔离级别、分布式事务",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_sw_db::存储引擎与事务"
+      },
+      {
+       "name": "分布式与 NoSQL",
+       "desc": "用分片与副本突破单机容量，用弱一致换取可用性。",
+       "points": [
+        {
+         "n": "分布式数据库",
+         "t": "分片、副本、Percolator、Raft、HTAP",
+         "l": "Go、Rust",
+         "s": "TiDB、CockroachDB、OceanBase"
+        },
+        {
+         "n": "NoSQL 系统",
+         "t": "文档/键值/列族/图模型、最终一致性、CAP 权衡",
+         "l": "—",
+         "s": "MongoDB、Redis、Cassandra、Neo4j"
+        }
+       ],
+       "id": "d_sw_db::分布式与 NoSQL"
+      },
+      {
+       "name": "新型数据管理",
+       "desc": "面向分析、向量与实时场景重新设计存储与查询。",
+       "points": [
+        {
+         "n": "数据仓库与湖仓",
+         "t": "星型模型、列存、表格式、ACID 湖、物化视图",
+         "l": "SQL",
+         "s": "ClickHouse、Iceberg、Hudi、Snowflake"
+        },
+        {
+         "n": "向量与混合检索",
+         "t": "ANN（HNSW/IVF/PQ）、混合检索、重排",
+         "l": "—",
+         "s": "Milvus、Faiss、pgvector、Elasticsearch"
+        },
+        {
+         "n": "流式与实时数仓",
+         "t": "变更数据捕获、流批一体、增量计算",
+         "l": "—",
+         "s": "Flink SQL、Materialize、Kafka"
+        },
+        {
+         "n": "数据治理",
+         "t": "元数据、血缘、数据质量、脱敏与审计",
+         "l": "—",
+         "s": "DataHub、Atlas、Ranger"
+        }
+       ],
+       "id": "d_sw_db::新型数据管理"
+      }
+     ],
+     "cat": "sw",
+     "disp": "数据库\n与数据管理",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 11,
+     "links": [
+      0,
+      10
+     ]
+    },
+    {
+     "id": "d_sw_big",
+     "name": "大数据与数据科学",
+     "en": "Big Data & Data Science",
+     "desc": "面向海量异构数据的采集、计算、分析与工程化，把数据变成可复用的决策依据。",
+     "base": [
+      {
+       "n": "数据生命周期",
+       "t": "采集、清洗、存储、分析、服务与归档",
+       "l": "Python",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "数据管道",
+       "desc": "稳定、可回溯地把源端数据搬运到分析端。",
+       "points": [
+        {
+         "n": "采集与集成",
+         "t": "CDC、ETL/ELT、消息队列、批流一体接入",
+         "l": "Python、Java",
+         "s": "Kafka、Debezium、Airflow、NiFi"
+        },
+        {
+         "n": "湖仓表格式",
+         "t": "快照隔离、增量读、Schema 演化、小文件治理",
+         "l": "—",
+         "s": "Iceberg、Delta Lake、Hudi"
+        }
+       ],
+       "id": "d_sw_big::数据管道"
+      },
+      {
+       "name": "计算引擎",
+       "desc": "把分布式计算抽象为声明式查询或数据流程序。",
+       "points": [
+        {
+         "n": "批处理",
+         "t": "分区、Shuffle、列式存储、向量化执行",
+         "l": "Scala、Python",
+         "s": "Spark、Hive、Trino"
+        },
+        {
+         "n": "流处理",
+         "t": "事件时间、水位线、Exactly-once、状态后端",
+         "l": "Java",
+         "s": "Flink、Kafka Streams、Spark Structured Streaming"
+        }
+       ],
+       "id": "d_sw_big::计算引擎"
+      },
+      {
+       "name": "分析与可视化",
+       "desc": "从统计结论到可沟通的视觉叙事。",
+       "points": [
+        {
+         "n": "统计分析与实验",
+         "t": "假设检验、A/B 实验、因果推断、指标口径",
+         "l": "Python、R",
+         "s": "pandas、statsmodels、EconML"
+        },
+        {
+         "n": "数据可视化",
+         "t": "视觉编码、交互筛选、叙事可视化",
+         "l": "JavaScript",
+         "s": "D3、ECharts、Tableau、Vega-Lite"
+        },
+        {
+         "n": "分析工程",
+         "t": "指标建模、语义层、数据质量测试",
+         "l": "SQL",
+         "s": "dbt、Great Expectations、Superset"
+        }
+       ],
+       "id": "d_sw_big::分析与可视化"
+      },
+      {
+       "name": "机器学习工程 MLOps",
+       "desc": "让模型从 Notebook 走向可监控、可回滚的生产系统。",
+       "points": [
+        {
+         "n": "特征与模型管理",
+         "t": "特征库、模型注册、版本化、实验追踪",
+         "l": "Python",
+         "s": "Feast、MLflow、Kubeflow"
+        },
+        {
+         "n": "监控与漂移",
+         "t": "数据漂移、模型监控、影子发布、A/B 上线",
+         "l": "—",
+         "s": "Evidently、Prometheus、Seldon"
+        }
+       ],
+       "id": "d_sw_big::机器学习工程 MLOps"
+      }
+     ],
+     "cat": "sw",
+     "disp": "大数据\n与数据科学",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": []
+    },
+    {
+     "id": "d_sw_gfx",
+     "name": "图形学与多媒体",
+     "en": "Computer Graphics & Multimedia",
+     "desc": "用计算生成、处理与呈现视觉内容，连接几何物理、GPU 管线与视觉体验。",
+     "base": [
+      {
+       "n": "图形学数学基础",
+       "t": "线性代数、齐次坐标、几何变换、颜色科学",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "渲染",
+       "desc": "从几何与材质出发，计算每个像素的颜色。",
+       "points": [
+        {
+         "n": "光栅化管线",
+         "t": "变换与裁剪、着色器、深度测试、混合",
+         "l": "C++、GLSL",
+         "s": "OpenGL、Vulkan、DirectX 12"
+        },
+        {
+         "n": "全局光照",
+         "t": "BRDF、PBR、路径追踪、光子映射、降噪",
+         "l": "—",
+         "s": "OptiX、Embree、Cycles、Hyperion"
+        }
+       ],
+       "id": "d_sw_gfx::渲染"
+      },
+      {
+       "name": "几何与动画",
+       "desc": "表示、编辑与驱动三维形状及其运动。",
+       "points": [
+        {
+         "n": "几何处理",
+         "t": "网格、细分、简化、参数化、三维重建",
+         "l": "C++",
+         "s": "CGAL、OpenMesh、libigl"
+        },
+        {
+         "n": "动画与物理仿真",
+         "t": "骨骼蒙皮、IK、刚体/流体/布料仿真",
+         "l": "—",
+         "s": "PhysX、MuJoCo、Houdini"
+        }
+       ],
+       "id": "d_sw_gfx::几何与动画"
+      },
+      {
+       "name": "实时图形与 XR",
+       "desc": "在 16ms 的帧预算内完成渲染与交互。",
+       "points": [
+        {
+         "n": "实时渲染技术",
+         "t": "延迟渲染、后处理、LOD、GPU Driven Pipeline",
+         "l": "—",
+         "s": "Unreal Engine、Unity、Nanite"
+        },
+        {
+         "n": "Web3D 与 XR",
+         "t": "WebGL/WebGPU、场景图、空间交互",
+         "l": "JavaScript、WGSL",
+         "s": "Three.js、Babylon.js、WebXR"
+        },
+        {
+         "n": "神经渲染",
+         "t": "NeRF、3D Gaussian Splatting、SDF、可微渲染",
+         "l": "Python",
+         "s": "instant-ngp、Nerfstudio、gsplat"
+        }
+       ],
+       "id": "d_sw_gfx::实时图形与 XR"
+      },
+      {
+       "name": "多媒体处理",
+       "desc": "图像、视频与音频的采集、增强、压缩与传输。",
+       "points": [
+        {
+         "n": "图像与视频处理",
+         "t": "滤波、超分、稳像、色彩管理、计算摄影",
+         "l": "C++",
+         "s": "OpenCV、FFmpeg、OpenColorIO"
+        },
+        {
+         "n": "编解码与流媒体",
+         "t": "H.264/HEVC/AV1、封装、ABR、低延迟传输",
+         "l": "—",
+         "s": "x264、SVT-AV1、WebRTC、SRS"
+        }
+       ],
+       "id": "d_sw_gfx::多媒体处理"
+      }
+     ],
+     "cat": "sw",
+     "disp": "图形学\n与多媒体",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": [
+      2
+     ]
+    },
+    {
+     "id": "d_sw_hci",
+     "name": "人机交互与可视化",
+     "en": "Human-Computer Interaction & Visualization",
+     "desc": "研究人与计算系统之间的交互方式与信息呈现，兼顾效率、体验与包容性。",
+     "base": [
+      {
+       "n": "交互范式",
+       "t": "命令行/图形/自然交互、心智模型、反馈循环",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "交互设计",
+       "desc": "从用户研究到界面实现，把需求翻译为可用的交互流程。",
+       "points": [
+        {
+         "n": "用户研究方法",
+         "t": "访谈、可用性测试、眼动追踪、出声思维、SUS",
+         "l": "—",
+         "s": "Maze、Tobii、UserTesting"
+        },
+        {
+         "n": "界面与前端实现",
+         "t": "组件化、响应式布局、可访问性（WCAG）",
+         "l": "TypeScript",
+         "s": "React、Vue、Tailwind、Storybook"
+        }
+       ],
+       "id": "d_sw_hci::交互设计"
+      },
+      {
+       "name": "新型交互",
+       "desc": "走出屏幕与键鼠，进入空间、身体与穿戴设备。",
+       "points": [
+        {
+         "n": "3D/XR 交互",
+         "t": "空间交互、手势与注视、触觉反馈、舒适度",
+         "l": "C#、TypeScript",
+         "s": "Unity XR、WebXR、ARKit/ARCore"
+        },
+        {
+         "n": "普适与可穿戴",
+         "t": "情境感知、传感器融合、通知管理、低功耗交互",
+         "l": "—",
+         "s": "Wear OS、OpenBCI、ESP32"
+        }
+       ],
+       "id": "d_sw_hci::新型交互"
+      },
+      {
+       "name": "可视化与可视分析",
+       "desc": "把抽象数据映射为可感知的视觉形式，支撑探索与决策。",
+       "points": [
+        {
+         "n": "信息可视化",
+         "t": "视觉编码、降维投影、交互筛选、图表选择",
+         "l": "JavaScript、Python",
+         "s": "D3、Vega-Lite、Plotly"
+        },
+        {
+         "n": "可视分析",
+         "t": "多视图联动、渐进式分析、大规模渲染",
+         "l": "—",
+         "s": "deck.gl、Kepler.gl、Tableau、Power BI"
+        }
+       ],
+       "id": "d_sw_hci::可视化与可视分析"
+      },
+      {
+       "name": "无障碍与交互伦理",
+       "desc": "让不同能力的人都能使用，并避免设计中的操纵。",
+       "points": [
+        {
+         "n": "包容性设计",
+         "t": "屏幕阅读、替代输入、色彩对比、认知负荷",
+         "l": "—",
+         "s": "NVDA、VoiceOver、axe"
+        },
+        {
+         "n": "隐私与伦理",
+         "t": "暗模式、知情同意、算法公平、注意力保护",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_sw_hci::无障碍与交互伦理"
+      }
+     ],
+     "cat": "sw",
+     "disp": "人机交互\n与可视化",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      7
+     ]
+    }
+   ]
+  },
+  {
+   "id": "net",
+   "name": "网络与安全",
+   "short": "网络安全",
+   "code": "NET",
+   "color": "#E0AF68",
+   "desc": "研究异构节点间的连接、协议与信任：网络体系结构、可编程数据面、攻防对抗、密码学与隐私计算。",
+   "directions": [
+    {
+     "id": "d_net_net",
+     "name": "计算机网络",
+     "en": "Computer Networks",
+     "desc": "研究异构节点之间如何分组交换、路由与拥塞控制，是互联网与数据中心网络的共同基础。",
+     "base": [
+      {
+       "n": "分层与协议体系",
+       "t": "OSI 七层、TCP/IP 四层、封装/分用、MTU 与分片",
+       "l": "—",
+       "s": "Wireshark、tcpdump"
+      },
+      {
+       "n": "链路与以太网",
+       "t": "帧结构、MAC 寻址、VLAN、ARP、生成树",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "传输与协议体系",
+       "desc": "在不可靠的 IP 之上构建可靠、公平、低时延的数据通道。",
+       "points": [
+        {
+         "n": "可靠传输与拥塞控制",
+         "t": "滑动窗口、重传、RTT 估计、CUBIC/BBR、AQM",
+         "l": "C",
+         "s": "Linux TCP、netem"
+        },
+        {
+         "n": "现代传输协议",
+         "t": "QUIC、HTTP/3、多路复用、0-RTT、连接迁移",
+         "l": "Rust、C++",
+         "s": "quiche、nghttp3、msquic"
+        },
+        {
+         "n": "应用层协议",
+         "t": "DNS、HTTP、gRPC、WebSocket、MQTT",
+         "l": "—",
+         "s": "curl、Envoy、CoreDNS"
+        }
+       ],
+       "id": "d_net_net::传输与协议体系"
+      },
+      {
+       "name": "路由与网络架构",
+       "desc": "决定分组走哪条路，以及数据中心内部如何组织东西向流量。",
+       "points": [
+        {
+         "n": "路由协议",
+         "t": "距离矢量、链路状态、BGP 策略、MPLS/SRv6",
+         "l": "—",
+         "s": "FRRouting、BIRD、Mininet"
+        },
+        {
+         "n": "数据中心网络",
+         "t": "叶脊架构、RDMA、无损以太网、等价多路径",
+         "l": "—",
+         "s": "RoCEv2、InfiniBand、SONiC"
+        },
+        {
+         "n": "内容分发与边缘",
+         "t": "CDN、缓存一致性、Anycast、边缘调度",
+         "l": "—",
+         "s": "Nginx、Varnish、Cloudflare"
+        }
+       ],
+       "id": "d_net_net::路由与网络架构"
+      },
+      {
+       "name": "可编程网络与高性能数据面",
+       "desc": "把网络设备变成可编程的，用软件定义转发行为。",
+       "points": [
+        {
+         "n": "SDN 与 P4",
+         "t": "控制面/数据面分离、P4 流水线、OpenFlow、INT",
+         "l": "P4",
+         "s": "P4Runtime、BMv2、Open vSwitch"
+        },
+        {
+         "n": "内核旁路与协议栈优化",
+         "t": "DPDK、XDP/eBPF、零拷贝、用户态协议栈",
+         "l": "C、eBPF",
+         "s": "DPDK、VPP、Cilium"
+        }
+       ],
+       "id": "d_net_net::可编程网络与高性能数据面"
+      },
+      {
+       "name": "无线与移动网络",
+       "desc": "面向广播介质、移动性与功耗约束的接入技术。",
+       "points": [
+        {
+         "n": "无线接入",
+         "t": "802.11、5G NR、调度与切换、MIMO",
+         "l": "—",
+         "s": "srsRAN、OpenAirInterface、ns-3"
+        },
+        {
+         "n": "低功耗广域与卫星",
+         "t": "LoRa、NB-IoT、LEO 星座组网、星间链路",
+         "l": "—",
+         "s": "ChirpStack、STK"
+        }
+       ],
+       "id": "d_net_net::无线与移动网络"
+      },
+      {
+       "name": "网络测量与运维",
+       "desc": "看不见的网络无法优化：用测量数据驱动容量规划与故障定位。",
+       "points": [
+        {
+         "n": "测量与遥测",
+         "t": "主动/被动测量、带内遥测、流量分类、根因分析",
+         "l": "—",
+         "s": "perfSONAR、nDPI、Prometheus"
+        }
+       ],
+       "id": "d_net_net::网络测量与运维"
+      }
+     ],
+     "cat": "net",
+     "disp": "计算机网络",
+     "nBase": 2,
+     "nBranch": 5,
+     "nPoint": 13,
+     "links": [
+      5
+     ]
+    },
+    {
+     "id": "d_net_sec",
+     "name": "网络空间安全",
+     "en": "Cybersecurity",
+     "desc": "在持续对抗中保障系统的机密性、完整性与可用性，覆盖系统、应用、数据与人的全链路。",
+     "base": [
+      {
+       "n": "安全模型与威胁建模",
+       "t": "STRIDE、攻击面分析、最小权限、纵深防御",
+       "l": "—",
+       "s": "Microsoft Threat Modeling Tool"
+      }
+     ],
+     "branches": [
+      {
+       "name": "系统与二进制安全",
+       "desc": "在内存与指令层面寻找并利用缺陷，是攻防最硬核的战场。",
+       "points": [
+        {
+         "n": "内存安全与漏洞利用",
+         "t": "栈/堆溢出、UAF、类型混淆、ROP/JOP",
+         "l": "C、汇编",
+         "s": "IDA Pro、Ghidra、pwntools"
+        },
+        {
+         "n": "漏洞挖掘",
+         "t": "覆盖率引导模糊测试、符号执行、污点分析、差分测试",
+         "l": "C++、Python",
+         "s": "AFL++、libFuzzer、angr"
+        },
+        {
+         "n": "系统加固",
+         "t": "ASLR/DEP/CFI、沙箱、SELinux、可信启动",
+         "l": "—",
+         "s": "SELinux、AppArmor、seccomp"
+        }
+       ],
+       "id": "d_net_sec::系统与二进制安全"
+      },
+      {
+       "name": "Web 与应用安全",
+       "desc": "业务逻辑与身份体系是数据泄露的主要入口。",
+       "points": [
+        {
+         "n": "Web 漏洞与防护",
+         "t": "注入、XSS、SSRF、反序列化、OWASP Top 10",
+         "l": "—",
+         "s": "Burp Suite、OWASP ZAP、Semgrep"
+        },
+        {
+         "n": "身份与访问控制",
+         "t": "OAuth2/OIDC、SAML、零信任、RBAC/ABAC",
+         "l": "—",
+         "s": "Keycloak、OPA、Okta"
+        }
+       ],
+       "id": "d_net_sec::Web 与应用安全"
+      },
+      {
+       "name": "攻防对抗与威胁情报",
+       "desc": "从单点漏洞走向持续检测、响应与情报运营。",
+       "points": [
+        {
+         "n": "检测与响应",
+         "t": "IDS/IPS、SIEM、EDR、蜜罐、ATT&CK 映射",
+         "l": "—",
+         "s": "Suricata、Wazuh、ELK、TheHive"
+        },
+        {
+         "n": "恶意代码分析",
+         "t": "静态/动态分析、沙箱、YARA 规则、反混淆",
+         "l": "—",
+         "s": "Cuckoo、YARA、CAPA、FLOSS"
+        }
+       ],
+       "id": "d_net_sec::攻防对抗与威胁情报"
+      },
+      {
+       "name": "隐私保护与可信计算",
+       "desc": "让数据在“可用不可见”的前提下产生价值。",
+       "points": [
+        {
+         "n": "隐私增强技术",
+         "t": "差分隐私、联邦学习、安全多方计算、k-匿名",
+         "l": "—",
+         "s": "Opacus、FATE、MP-SPDZ"
+        },
+        {
+         "n": "可信执行环境",
+         "t": "TPM、SGX/TDX、SEV、机密容器、远程证明",
+         "l": "—",
+         "s": "Intel SGX、AMD SEV、Confidential Containers"
+        }
+       ],
+       "id": "d_net_sec::隐私保护与可信计算"
+      }
+     ],
+     "cat": "net",
+     "disp": "网络空间\n安全",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": [
+      3
+     ]
+    },
+    {
+     "id": "d_net_crypto",
+     "name": "密码学与隐私计算",
+     "en": "Cryptography & Privacy-Preserving Computation",
+     "desc": "用数学构造为通信与计算提供保密性、认证性与可验证性，是安全体系的可信根。",
+     "base": [
+      {
+       "n": "数论与代数基础",
+       "t": "模运算、群环域、椭圆曲线、格、双线性配对",
+       "l": "—",
+       "s": "SageMath、PARI/GP"
+      }
+     ],
+     "branches": [
+      {
+       "name": "基础密码原语",
+       "desc": "对称、公钥与哈希三类原语构成全部安全协议的积木。",
+       "points": [
+        {
+         "n": "对称密码",
+         "t": "AES、分组模式（GCM/CCM）、认证加密、流密码",
+         "l": "C",
+         "s": "OpenSSL、libsodium"
+        },
+        {
+         "n": "公钥密码",
+         "t": "RSA、ECC、Diffie-Hellman、数字签名",
+         "l": "—",
+         "s": "OpenSSL、BoringSSL"
+        },
+        {
+         "n": "哈希与 MAC",
+         "t": "SHA-2/3、HMAC、Merkle 树、KDF",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_net_crypto::基础密码原语"
+      },
+      {
+       "name": "协议与工程",
+       "desc": "把原语组装成可部署的协议，并管理密钥的全生命周期。",
+       "points": [
+        {
+         "n": "安全传输协议",
+         "t": "TLS 1.3、Noise、Signal 双棘轮、证书透明",
+         "l": "—",
+         "s": "OpenSSL、rustls、WireGuard"
+        },
+        {
+         "n": "密钥管理与 PKI",
+         "t": "证书链、CA、HSM、密钥轮换与托管",
+         "l": "—",
+         "s": "cfssl、Vault、HSM/KMS"
+        }
+       ],
+       "id": "d_net_crypto::协议与工程"
+      },
+      {
+       "name": "前沿密码",
+       "desc": "在可验证、可计算、抗量子的方向上扩展密码的边界。",
+       "points": [
+        {
+         "n": "零知识证明",
+         "t": "zk-SNARK/STARK、算术电路、承诺方案、Fiat-Shamir",
+         "l": "Rust",
+         "s": "circom、snarkjs、Halo2、gnark"
+        },
+        {
+         "n": "同态与多方计算",
+         "t": "全同态加密、秘密分享、混淆电路、PSI",
+         "l": "—",
+         "s": "SEAL、OpenFHE、MP-SPDZ"
+        },
+        {
+         "n": "后量子密码",
+         "t": "格密码、编码密码、Kyber/Dilithium、迁移策略",
+         "l": "—",
+         "s": "liboqs、PQClean、OpenSSL 3.5"
+        }
+       ],
+       "id": "d_net_crypto::前沿密码"
+      },
+      {
+       "name": "密码分析",
+       "desc": "攻击是检验密码强度的唯一标准。",
+       "points": [
+        {
+         "n": "经典与侧信道攻击",
+         "t": "差分/线性分析、相关功耗分析、故障注入",
+         "l": "—",
+         "s": "ChipWhisperer、SageMath"
+        }
+       ],
+       "id": "d_net_crypto::密码分析"
+      }
+     ],
+     "cat": "net",
+     "disp": "密码学\n与隐私计算",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": [
+      6,
+      11
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ai",
+   "name": "智能与认知计算",
+   "short": "智能认知",
+   "code": "AI",
+   "color": "#BB9AF7",
+   "desc": "研究智能的表示、学习与感知：知识工程、机器学习、深度学习与大模型、视觉语音语言等感知智能。",
+   "directions": [
+    {
+     "id": "d_ai_kg",
+     "name": "人工智能与知识工程",
+     "en": "Artificial Intelligence & Knowledge Engineering",
+     "desc": "符号主义 AI 的主干：用显式知识表示世界，通过搜索、推理与规划做出决策。",
+     "base": [
+      {
+       "n": "AI 问题求解",
+       "t": "状态空间表示、搜索、博弈树、启发式评估",
+       "l": "Python",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "搜索、规划与决策",
+       "desc": "把决策问题转化为在状态空间中寻找最优路径。",
+       "points": [
+        {
+         "n": "启发式搜索",
+         "t": "A*、IDA*、启发函数设计与可采纳性",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "自动规划",
+         "t": "PDDL、状态空间规划、蒙特卡洛树搜索、约束满足",
+         "l": "—",
+         "s": "Fast Downward、OR-Tools、MCTS"
+        }
+       ],
+       "id": "d_ai_kg::搜索、规划与决策"
+      },
+      {
+       "name": "知识表示与推理",
+       "desc": "让机器以可解释、可推理的方式持有知识。",
+       "points": [
+        {
+         "n": "逻辑与本体",
+         "t": "描述逻辑、OWL、规则引擎、产生式系统",
+         "l": "—",
+         "s": "Protégé、Drools、Apache Jena"
+        },
+        {
+         "n": "不确定性推理",
+         "t": "贝叶斯网、模糊逻辑、证据理论、信念传播",
+         "l": "—",
+         "s": "pgmpy、Pyro"
+        }
+       ],
+       "id": "d_ai_kg::知识表示与推理"
+      },
+      {
+       "name": "知识图谱",
+       "desc": "以图结构组织事实，支撑语义检索、推荐与推理。",
+       "points": [
+        {
+         "n": "图谱构建",
+         "t": "实体/关系抽取、实体对齐、知识融合、质量控制",
+         "l": "Python",
+         "s": "DeepKE、OpenKE、spaCy"
+        },
+        {
+         "n": "存储与查询",
+         "t": "RDF/属性图模型、SPARQL/Cypher、图计算",
+         "l": "—",
+         "s": "Neo4j、Apache Jena、GraphDB"
+        },
+        {
+         "n": "知识增强生成",
+         "t": "图谱嵌入、GraphRAG、语义检索与重排",
+         "l": "—",
+         "s": "TransE、LangChain、Neo4j"
+        }
+       ],
+       "id": "d_ai_kg::知识图谱"
+      },
+      {
+       "name": "智能体系统",
+       "desc": "把感知、记忆、规划与工具调用组合为可自主完成任务的实体。",
+       "points": [
+        {
+         "n": "智能体架构",
+         "t": "BDI、反应式架构、LLM Agent、工具调用、记忆",
+         "l": "Python",
+         "s": "LangGraph、AutoGen、MCP"
+        },
+        {
+         "n": "多智能体与博弈",
+         "t": "博弈论、机制设计、多智能体强化学习",
+         "l": "—",
+         "s": "PettingZoo、MARLlib、OpenSpiel"
+        }
+       ],
+       "id": "d_ai_kg::智能体系统"
+      }
+     ],
+     "cat": "ai",
+     "disp": "人工智能\n与知识工程",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": []
+    },
+    {
+     "id": "d_ai_ml",
+     "name": "机器学习",
+     "en": "Machine Learning",
+     "desc": "从数据中归纳规律：模型、损失、优化与泛化，构成当代 AI 的方法论内核。",
+     "base": [
+      {
+       "n": "学习范式",
+       "t": "监督/无监督/半监督/自监督/强化学习",
+       "l": "Python",
+       "s": "scikit-learn"
+      },
+      {
+       "n": "评估与泛化",
+       "t": "交叉验证、偏差-方差、过拟合、指标设计",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "经典模型",
+       "desc": "在中小规模结构化数据上仍然最强的一类方法。",
+       "points": [
+        {
+         "n": "线性与核方法",
+         "t": "线性/逻辑回归、SVM、正则化、核技巧",
+         "l": "—",
+         "s": "scikit-learn、LIBSVM"
+        },
+        {
+         "n": "树模型与集成",
+         "t": "决策树、随机森林、GBDT、XGBoost/LightGBM",
+         "l": "—",
+         "s": "XGBoost、LightGBM、CatBoost"
+        },
+        {
+         "n": "聚类与降维",
+         "t": "K-means、DBSCAN、GMM、PCA、t-SNE、UMAP",
+         "l": "—",
+         "s": "scikit-learn、UMAP、HDBSCAN"
+        }
+       ],
+       "id": "d_ai_ml::经典模型"
+      },
+      {
+       "name": "概率与贝叶斯学习",
+       "desc": "用概率分布刻画不确定性，是生成模型与因果推断的桥梁。",
+       "points": [
+        {
+         "n": "隐变量与 EM",
+         "t": "EM 算法、变分推断、混合模型",
+         "l": "—",
+         "s": "PyMC、Pyro、NumPyro"
+        }
+       ],
+       "id": "d_ai_ml::概率与贝叶斯学习"
+      },
+      {
+       "name": "强化学习",
+       "desc": "通过与环境交互的试错信号学习序贯决策策略。",
+       "points": [
+        {
+         "n": "值函数与策略梯度",
+         "t": "MDP、Q-learning、PPO、SAC、离线 RL",
+         "l": "Python",
+         "s": "Gymnasium、Stable-Baselines3、RLlib"
+        },
+        {
+         "n": "探索与信用分配",
+         "t": "内在奖励、模仿学习、分层 RL、多智能体 RL",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_ai_ml::强化学习"
+      },
+      {
+       "name": "学习理论与可信机器学习",
+       "desc": "回答“为什么能学、学到什么程度、能否被信任”。",
+       "points": [
+        {
+         "n": "泛化理论",
+         "t": "VC 维、Rademacher 复杂度、泛化界、双下降",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "可解释与鲁棒",
+         "t": "SHAP、LIME、对抗鲁棒、公平性、不确定性估计",
+         "l": "—",
+         "s": "SHAP、Captum、ART"
+        },
+        {
+         "n": "AutoML",
+         "t": "超参搜索、神经架构搜索、元学习",
+         "l": "—",
+         "s": "Optuna、Ray Tune、AutoGluon"
+        }
+       ],
+       "id": "d_ai_ml::学习理论与可信机器学习"
+      }
+     ],
+     "cat": "ai",
+     "disp": "机器学习",
+     "nBase": 2,
+     "nBranch": 4,
+     "nPoint": 11,
+     "links": []
+    },
+    {
+     "id": "d_ai_dl",
+     "name": "深度学习与大模型",
+     "en": "Deep Learning & Foundation Models",
+     "desc": "以深层神经网络与大规模预训练为核心，把“规模”转化为通用能力，是当前 AI 的主战场。",
+     "base": [
+      {
+       "n": "神经网络基础",
+       "t": "反向传播、激活函数、初始化、归一化、正则化",
+       "l": "Python",
+       "s": "PyTorch、TensorFlow、JAX"
+      }
+     ],
+     "branches": [
+      {
+       "name": "网络架构",
+       "desc": "用归纳偏置匹配数据模态：卷积管图像、注意力管序列。",
+       "points": [
+        {
+         "n": "卷积与视觉骨干",
+         "t": "CNN、感受野、ResNet、ViT、ConvNeXt",
+         "l": "—",
+         "s": "timm、torchvision"
+        },
+        {
+         "n": "序列与注意力",
+         "t": "RNN/LSTM、注意力机制、Transformer、状态空间模型",
+         "l": "—",
+         "s": "HuggingFace Transformers、Mamba"
+        }
+       ],
+       "id": "d_ai_dl::网络架构"
+      },
+      {
+       "name": "生成模型",
+       "desc": "学习数据分布，从而生成新的样本。",
+       "points": [
+        {
+         "n": "生成与扩散",
+         "t": "VAE、GAN、扩散模型、流匹配、采样加速",
+         "l": "—",
+         "s": "Diffusers、StyleGAN、ComfyUI"
+        }
+       ],
+       "id": "d_ai_dl::生成模型"
+      },
+      {
+       "name": "大语言模型",
+       "desc": "以海量语料预训练 + 对齐，获得通用语言与推理能力。",
+       "points": [
+        {
+         "n": "预训练与微调",
+         "t": "自监督目标、指令微调、RLHF/DPO、LoRA/PEFT",
+         "l": "—",
+         "s": "PEFT、TRL、DeepSpeed"
+        },
+        {
+         "n": "分布式训练",
+         "t": "数据/张量/流水并行、ZeRO、混合精度、检查点",
+         "l": "—",
+         "s": "Megatron-LM、DeepSpeed、FSDP"
+        },
+        {
+         "n": "推理与部署",
+         "t": "KV Cache、量化、投机解码、连续批处理",
+         "l": "C++、CUDA",
+         "s": "vLLM、TensorRT-LLM、llama.cpp"
+        },
+        {
+         "n": "评测与对齐",
+         "t": "基准评测、红队测试、越狱防御、价值观对齐",
+         "l": "—",
+         "s": "HELM、Inspect、Garak"
+        }
+       ],
+       "id": "d_ai_dl::大语言模型"
+      },
+      {
+       "name": "多模态与检索增强",
+       "desc": "让模型同时理解文本、图像、语音，并连接外部知识。",
+       "points": [
+        {
+         "n": "多模态模型",
+         "t": "CLIP、视觉-语言对齐、视频生成、跨模态检索",
+         "l": "—",
+         "s": "OpenCLIP、LLaVA、Qwen-VL"
+        },
+        {
+         "n": "RAG 与工具调用",
+         "t": "向量检索、重排、函数调用、Agent 编排",
+         "l": "Python",
+         "s": "LlamaIndex、LangChain、Milvus"
+        }
+       ],
+       "id": "d_ai_dl::多模态与检索增强"
+      }
+     ],
+     "cat": "ai",
+     "disp": "深度学习\n与大模型",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 10,
+     "links": [
+      0,
+      1,
+      3,
+      4,
+      7,
+      9
+     ]
+    },
+    {
+     "id": "d_ai_perc",
+     "name": "感知智能",
+     "en": "Perception: Vision, Speech & Language",
+     "desc": "让机器看懂图像、听懂语音、理解语言，是 AI 落地最成熟、产业规模最大的方向。",
+     "base": [
+      {
+       "n": "信号与特征",
+       "t": "图像/语音信号、特征工程、数据标注与增强",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "计算机视觉",
+       "desc": "从像素中提取语义、几何与运动信息。",
+       "points": [
+        {
+         "n": "检测与分割",
+         "t": "骨干网络、FPN、Anchor-free、语义/实例/全景分割",
+         "l": "Python",
+         "s": "MMDetection、Detectron2、YOLO、SAM"
+        },
+        {
+         "n": "3D 视觉与 SLAM",
+         "t": "多视图几何、点云、VIO、稠密重建",
+         "l": "C++",
+         "s": "COLMAP、Open3D、ORB-SLAM3"
+        },
+        {
+         "n": "视频与跟踪",
+         "t": "时序建模、多目标跟踪、动作识别、视频理解",
+         "l": "—",
+         "s": "MMAction2、ByteTrack、PyTorchVideo"
+        }
+       ],
+       "id": "d_ai_perc::计算机视觉"
+      },
+      {
+       "name": "语音与音频",
+       "desc": "把声波转成文字、把文字合成语音，并处理真实环境噪声。",
+       "points": [
+        {
+         "n": "语音识别",
+         "t": "声学模型、CTC、端到端、流式识别、热词",
+         "l": "—",
+         "s": "Whisper、Kaldi、FunASR"
+        },
+        {
+         "n": "语音合成与增强",
+         "t": "TTS、声码器、降噪、语音分离",
+         "l": "—",
+         "s": "VITS、HiFi-GAN、Demucs"
+        }
+       ],
+       "id": "d_ai_perc::语音与音频"
+      },
+      {
+       "name": "自然语言处理",
+       "desc": "让机器理解与生成人类语言，是 LLM 的直接前身。",
+       "points": [
+        {
+         "n": "基础任务",
+         "t": "分词、NER、句法分析、机器翻译、文本分类",
+         "l": "—",
+         "s": "spaCy、fairseq、Marian"
+        },
+        {
+         "n": "信息抽取与问答",
+         "t": "关系抽取、文档理解、开放域问答",
+         "l": "—",
+         "s": "LayoutLM、PaddleOCR、Elasticsearch"
+        }
+       ],
+       "id": "d_ai_perc::自然语言处理"
+      },
+      {
+       "name": "具身感知",
+       "desc": "把视觉与语言连接到动作，让感知服务于行动。",
+       "points": [
+        {
+         "n": "视觉-语言-动作",
+         "t": "VLA 模型、Sim2Real、操作感知、空间推理",
+         "l": "—",
+         "s": "OpenVLA、Isaac Sim、RT-2 类架构"
+        }
+       ],
+       "id": "d_ai_perc::具身感知"
+      }
+     ],
+     "cat": "ai",
+     "disp": "感知智能",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "app",
+   "name": "应用与交叉前沿",
+   "short": "应用交叉",
+   "code": "APP",
+   "color": "#7DCFFF",
+   "desc": "计算向物理世界与其他学科的延伸：物联网嵌入式、机器人与具身智能、区块链、生物信息、量子计算。",
+   "directions": [
+    {
+     "id": "d_app_iot",
+     "name": "物联网与嵌入式",
+     "en": "IoT & Embedded Systems",
+     "desc": "把计算嵌入物理世界：在功耗、实时性与成本的三重约束下完成感知、连接与控制。",
+     "base": [
+      {
+       "n": "嵌入式基础",
+       "t": "MCU 架构、寄存器编程、交叉编译、在线调试",
+       "l": "C、Rust",
+       "s": "STM32Cube、OpenOCD、J-Link"
+      }
+     ],
+     "branches": [
+      {
+       "name": "嵌入式系统与实时性",
+       "desc": "在毫秒级时限内可靠响应外部事件。",
+       "points": [
+        {
+         "n": "RTOS 与实时调度",
+         "t": "任务优先级、中断延迟、优先级继承、栈分析",
+         "l": "C",
+         "s": "FreeRTOS、Zephyr、RT-Thread"
+        },
+        {
+         "n": "外设与总线",
+         "t": "I2C/SPI/UART/CAN、DMA、采样与数字滤波",
+         "l": "C",
+         "s": "HAL/LL 库、逻辑分析仪"
+        }
+       ],
+       "id": "d_app_iot::嵌入式系统与实时性"
+      },
+      {
+       "name": "无线连接",
+       "desc": "在有限功耗预算内把设备接入网络。",
+       "points": [
+        {
+         "n": "短距无线",
+         "t": "BLE、Zigbee、Thread、Matter、Mesh 组网",
+         "l": "—",
+         "s": "Zephyr、Silicon Labs SDK、nRF Connect"
+        },
+        {
+         "n": "低功耗广域",
+         "t": "LoRa/LoRaWAN、NB-IoT、eDRX/PSM、蜂窝模组",
+         "l": "—",
+         "s": "ChirpStack、AWS IoT Core"
+        }
+       ],
+       "id": "d_app_iot::无线连接"
+      },
+      {
+       "name": "边缘智能与工业互联",
+       "desc": "把模型与决策下沉到现场，减少时延与带宽成本。",
+       "points": [
+        {
+         "n": "边缘智能",
+         "t": "模型压缩、量化、TinyML、端侧推理调度",
+         "l": "C++、Python",
+         "s": "TensorFlow Lite Micro、Edge Impulse、ONNX Runtime"
+        },
+        {
+         "n": "工业互联",
+         "t": "OPC UA、TSN、Modbus、预测性维护",
+         "l": "—",
+         "s": "open62541、Siemens TIA、Ignition"
+        },
+        {
+         "n": "功能安全",
+         "t": "ISO 26262、IEC 61508、冗余设计、失效模式分析",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_app_iot::边缘智能与工业互联"
+      },
+      {
+       "name": "物联网平台",
+       "desc": "海量设备的接入、管理与生命周期运维。",
+       "points": [
+        {
+         "n": "接入与设备管理",
+         "t": "MQTT/CoAP、设备影子、OTA 升级、规则引擎",
+         "l": "—",
+         "s": "EMQX、ThingsBoard、AWS IoT"
+        }
+       ],
+       "id": "d_app_iot::物联网平台"
+      }
+     ],
+     "cat": "app",
+     "disp": "物联网\n与嵌入式",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      8
+     ]
+    },
+    {
+     "id": "d_app_robot",
+     "name": "机器人与具身智能",
+     "en": "Robotics & Embodied AI",
+     "desc": "让智能体在物理世界中感知、规划与行动，是 AI 与控制的交汇点。",
+     "base": [
+      {
+       "n": "机器人学基础",
+       "t": "位姿表示、齐次变换、正逆运动学、雅可比",
+       "l": "C++、Python",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "规划与控制",
+       "desc": "在动力学约束下生成可行且最优的运动。",
+       "points": [
+        {
+         "n": "运动规划",
+         "t": "A*/RRT*、轨迹优化、避障、采样式规划",
+         "l": "C++",
+         "s": "OMPL、MoveIt、TrajOpt"
+        },
+        {
+         "n": "控制方法",
+         "t": "PID、MPC、全身控制 WBC、阻抗/力控",
+         "l": "—",
+         "s": "CasADi、MuJoCo、OCS2"
+        }
+       ],
+       "id": "d_app_robot::规划与控制"
+      },
+      {
+       "name": "状态估计与 SLAM",
+       "desc": "在噪声与漂移中回答“我在哪、周围是什么”。",
+       "points": [
+        {
+         "n": "概率状态估计",
+         "t": "卡尔曼/粒子滤波、因子图优化、IMU 预积分",
+         "l": "—",
+         "s": "GTSAM、Ceres、EKF2"
+        },
+        {
+         "n": "SLAM",
+         "t": "激光/视觉/惯性融合、回环检测、稠密建图",
+         "l": "—",
+         "s": "Cartographer、ORB-SLAM3、LIO-SAM"
+        }
+       ],
+       "id": "d_app_robot::状态估计与 SLAM"
+      },
+      {
+       "name": "操作与具身学习",
+       "desc": "从抓取到灵巧操作，用学习替代手工建模。",
+       "points": [
+        {
+         "n": "抓取与操作",
+         "t": "抓取检测、力控装配、灵巧手、触觉反馈",
+         "l": "—",
+         "s": "GraspNet、Diffusion Policy、Robotiq"
+        },
+        {
+         "n": "模仿与强化学习",
+         "t": "示教学习、Sim2Real、域随机化、世界模型",
+         "l": "—",
+         "s": "Isaac Lab、legged_gym、RoboSuite"
+        }
+       ],
+       "id": "d_app_robot::操作与具身学习"
+      },
+      {
+       "name": "应用系统",
+       "desc": "把感知-决策-执行闭环落到真实场景。",
+       "points": [
+        {
+         "n": "自动驾驶",
+         "t": "感知-预测-规划、BEV、端到端驾驶、安全冗余",
+         "l": "—",
+         "s": "Apollo、Autoware、CARLA"
+        },
+        {
+         "n": "仿真与数字孪生",
+         "t": "物理引擎、传感器仿真、场景生成、闭环评测",
+         "l": "—",
+         "s": "Isaac Sim、Gazebo、MuJoCo"
+        }
+       ],
+       "id": "d_app_robot::应用系统"
+      }
+     ],
+     "cat": "app",
+     "disp": "机器人\n与具身智能",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      8
+     ]
+    },
+    {
+     "id": "d_app_chain",
+     "name": "区块链与 Web3",
+     "en": "Blockchain & Web3",
+     "desc": "以密码学与共识构建去中心化、可验证的账本与应用，重新定义信任的建立方式。",
+     "base": [
+      {
+       "n": "分布式账本原理",
+       "t": "哈希链、Merkle 树、UTXO/账户模型、不可篡改性",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "共识与账本",
+       "desc": "在开放网络中就让谁记账、如何确认达成一致。",
+       "points": [
+        {
+         "n": "共识机制",
+         "t": "PoW/PoS、BFT 类共识、分片、最终性",
+         "l": "Go、Rust",
+         "s": "Tendermint、HotStuff、Lighthouse"
+        },
+        {
+         "n": "密码学账户",
+         "t": "ECDSA、地址派生、多签、门限签名、账户抽象",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_app_chain::共识与账本"
+      },
+      {
+       "name": "智能合约",
+       "desc": "把业务规则写成链上可执行代码，代价是代码即法律。",
+       "points": [
+        {
+         "n": "合约与虚拟机",
+         "t": "EVM、Gas 模型、Solidity/Rust、WASM 合约",
+         "l": "Solidity、Rust",
+         "s": "Hardhat、Foundry、Remix"
+        },
+        {
+         "n": "合约安全",
+         "t": "重入、整数溢出、预言机操纵、形式验证",
+         "l": "—",
+         "s": "Slither、Mythril、Certora"
+        }
+       ],
+       "id": "d_app_chain::智能合约"
+      },
+      {
+       "name": "扩容与互操作",
+       "desc": "在去中心化与吞吐之间寻找工程折中。",
+       "points": [
+        {
+         "n": "Layer2 扩容",
+         "t": "Optimistic/ZK Rollup、状态通道、DA 层、排序器",
+         "l": "—",
+         "s": "Optimism、Arbitrum、zkSync、Celestia"
+        },
+        {
+         "n": "跨链互操作",
+         "t": "中继、轻客户端、桥、IBC、消息传递",
+         "l": "—",
+         "s": "IBC、LayerZero、Wormhole"
+        }
+       ],
+       "id": "d_app_chain::扩容与互操作"
+      },
+      {
+       "name": "应用生态",
+       "desc": "从金融到身份，探索去中心化应用的可行边界。",
+       "points": [
+        {
+         "n": "DeFi 与治理",
+         "t": "AMM、借贷协议、稳定币、DAO 治理",
+         "l": "—",
+         "s": "Uniswap、Aave、Snapshot"
+        },
+        {
+         "n": "去中心化存储与身份",
+         "t": "IPFS、DID、可验证凭证、数据确权",
+         "l": "—",
+         "s": "IPFS、Ceramic、ENS"
+        }
+       ],
+       "id": "d_app_chain::应用生态"
+      }
+     ],
+     "cat": "app",
+     "disp": "区块链\n与 Web3",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      6
+     ]
+    },
+    {
+     "id": "d_app_bio",
+     "name": "生物信息与 AI for Science",
+     "en": "Bioinformatics & AI for Science",
+     "desc": "用计算方法解读生命与物质世界的复杂系统，是 AI 从语言走向科学发现的主通道。",
+     "base": [
+      {
+       "n": "生物数据基础",
+       "t": "序列、结构、组学、影像数据的表示与检索",
+       "l": "Python",
+       "s": "Biopython、NCBI Entrez"
+      }
+     ],
+     "branches": [
+      {
+       "name": "基因组与组学",
+       "desc": "从测序读段到生物学结论的完整计算链路。",
+       "points": [
+        {
+         "n": "序列分析",
+         "t": "序列比对、组装、变异检测、功能注释",
+         "l": "Python",
+         "s": "BWA、GATK、SAMtools、Nextflow"
+        },
+        {
+         "n": "单细胞与多组学",
+         "t": "表达定量、聚类、轨迹推断、多组学整合",
+         "l": "R、Python",
+         "s": "Seurat、Scanpy、DESeq2"
+        }
+       ],
+       "id": "d_app_bio::基因组与组学"
+      },
+      {
+       "name": "结构与药物",
+       "desc": "从氨基酸序列预测三维结构，并据此设计分子。",
+       "points": [
+        {
+         "n": "结构预测与模拟",
+         "t": "同源建模、几何深度学习、分子动力学",
+         "l": "Python",
+         "s": "AlphaFold、GROMACS、PyMOL"
+        },
+        {
+         "n": "药物发现",
+         "t": "虚拟筛选、生成分子、ADMET 预测、蛋白-配体对接",
+         "l": "—",
+         "s": "RDKit、DeepChem、AutoDock Vina"
+        }
+       ],
+       "id": "d_app_bio::结构与药物"
+      },
+      {
+       "name": "医学与影像",
+       "desc": "把计算方法带入临床诊断与真实世界研究。",
+       "points": [
+        {
+         "n": "医学影像分析",
+         "t": "分割、配准、分类、影像组学、弱监督",
+         "l": "—",
+         "s": "MONAI、nnU-Net、ITK"
+        },
+        {
+         "n": "临床与真实世界数据",
+         "t": "电子病历、生存分析、因果效应、隐私保护",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_app_bio::医学与影像"
+      },
+      {
+       "name": "科学机器学习",
+       "desc": "把物理定律与对称性嵌入网络，服务科学发现。",
+       "points": [
+        {
+         "n": "物理约束学习",
+         "t": "PINN、神经算子、等变图网络、可微仿真",
+         "l": "—",
+         "s": "DeepXDE、Modulus、e3nn"
+        },
+        {
+         "n": "脑机接口",
+         "t": "EEG/fMRI 解码、神经假体、在线自适应",
+         "l": "—",
+         "s": "MNE-Python、BCI2000"
+        }
+       ],
+       "id": "d_app_bio::科学机器学习"
+      }
+     ],
+     "cat": "app",
+     "disp": "生物信息\n与 AI4Science",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      4
+     ]
+    },
+    {
+     "id": "d_app_quantum",
+     "name": "量子计算与量子信息",
+     "en": "Quantum Computing & Quantum Information",
+     "desc": "利用量子叠加与纠缠实现新的计算与通信范式，是后摩尔时代最受关注的计算路线之一。",
+     "base": [
+      {
+       "n": "量子力学基础",
+       "t": "态矢、算符、测量、密度矩阵、纠缠",
+       "l": "—",
+       "s": "—"
+      }
+     ],
+     "branches": [
+      {
+       "name": "量子算法与线路",
+       "desc": "设计能在量子硬件上表达并放大干涉效应的算法。",
+       "points": [
+        {
+         "n": "量子线路与门",
+         "t": "单/双量子比特门、纠缠、测量、线路编译",
+         "l": "Python",
+         "s": "Qiskit、Cirq、Quil"
+        },
+        {
+         "n": "核心算法",
+         "t": "Shor、Grover、QAOA、VQE、HHL",
+         "l": "—",
+         "s": "Qiskit、PennyLane、Qiskit Nature"
+        }
+       ],
+       "id": "d_app_quantum::量子算法与线路"
+      },
+      {
+       "name": "纠错与硬件",
+       "desc": "在退相干与噪声中维持逻辑量子比特。",
+       "points": [
+        {
+         "n": "量子纠错",
+         "t": "稳定子码、表面码、阈值定理、逻辑门",
+         "l": "—",
+         "s": "Stim、PyMatching、QEC 工具链"
+        },
+        {
+         "n": "硬件实现",
+         "t": "超导、离子阱、光量子、中性原子、退相干",
+         "l": "—",
+         "s": "—"
+        }
+       ],
+       "id": "d_app_quantum::纠错与硬件"
+      },
+      {
+       "name": "量子通信与安全",
+       "desc": "用物理定律而非计算复杂度保障通信安全。",
+       "points": [
+        {
+         "n": "量子密钥分发",
+         "t": "BB84、E91、量子中继、可信节点",
+         "l": "—",
+         "s": "—"
+        },
+        {
+         "n": "后量子迁移",
+         "t": "与经典密码体系衔接、混合密钥交换",
+         "l": "—",
+         "s": "liboqs、OpenSSL"
+        }
+       ],
+       "id": "d_app_quantum::量子通信与安全"
+      },
+      {
+       "name": "量子模拟与量子机器学习",
+       "desc": "用量子系统模拟量子系统，并探索量子优势的边界。",
+       "points": [
+        {
+         "n": "量子模拟",
+         "t": "哈密顿量模拟、Trotter 化、张量网络",
+         "l": "—",
+         "s": "QuTiP、ITensor、Qiskit Dynamics"
+        },
+        {
+         "n": "量子机器学习",
+         "t": "变分线路、量子核方法、量子神经网络",
+         "l": "—",
+         "s": "PennyLane、TensorFlow Quantum"
+        }
+       ],
+       "id": "d_app_quantum::量子模拟与量子机器学习"
+      }
+     ],
+     "cat": "app",
+     "disp": "量子计算\n与量子信息",
+     "nBase": 1,
+     "nBranch": 4,
+     "nPoint": 9,
+     "links": [
+      11
+     ]
+    }
+   ]
+  }
+ ],
+ "crossLinks": [
+  {
+   "a": "d_ai_dl",
+   "b": "d_sw_db",
+   "name": "向量数据库与 RAG",
+   "desc": "大模型把数据库的外延从结构化查询扩展到高维向量检索：HNSW/IVF 索引、混合检索、重排与 GraphRAG 共同构成检索增强生成的技术底座。"
+  },
+  {
+   "a": "d_ai_dl",
+   "b": "d_sys_arch",
+   "name": "AI 芯片与异构计算",
+   "desc": "Transformer 的算力需求催生脉动阵列、HBM 与 NVLink 体系；编译器（TVM/Triton）负责把算子映射到 GPU/NPU，形成“模型—编译—芯片”协同设计。"
+  },
+  {
+   "a": "d_sw_gfx",
+   "b": "d_ai_perc",
+   "name": "神经渲染与三维重建",
+   "desc": "NeRF、3D Gaussian Splatting 把可微渲染与视觉重建结合，用神经场替代传统几何管线，服务数字人、自动驾驶仿真与空间计算。"
+  },
+  {
+   "a": "d_net_sec",
+   "b": "d_ai_dl",
+   "name": "AI 安全与对抗攻防",
+   "desc": "对抗样本、提示注入、模型窃取与越狱构成新的攻击面；防御侧依赖对抗训练、红队评测与运行时护栏。"
+  },
+  {
+   "a": "d_app_bio",
+   "b": "d_ai_dl",
+   "name": "AI for Science",
+   "desc": "AlphaFold 类几何深度学习、神经算子与物理约束网络，把大模型能力迁移到分子、材料与气候等科学计算问题。"
+  },
+  {
+   "a": "d_net_net",
+   "b": "d_sys_dist",
+   "name": "数据中心网络与 RDMA",
+   "desc": "分布式训练与存算分离要求无损网络、RoCE/InfiniBand 与在网计算，网络成为分布式系统的性能瓶颈与设计变量。"
+  },
+  {
+   "a": "d_net_crypto",
+   "b": "d_app_chain",
+   "name": "零知识证明与 ZK-Rollup",
+   "desc": "zk-SNARK/STARK 把链下计算压缩为可验证证明，是 Layer2 扩容与隐私交易的核心密码学组件。"
+  },
+  {
+   "a": "d_sw_hci",
+   "b": "d_ai_dl",
+   "name": "生成式交互与智能界面",
+   "desc": "大模型把 GUI 从“点击”推向“意图表达”：多模态输入、Agent 编排、可控生成正在重写人机交互范式。"
+  },
+  {
+   "a": "d_app_iot",
+   "b": "d_app_robot",
+   "name": "端侧智能与具身系统",
+   "desc": "TinyML、模型量化与实时 OS 让感知-决策闭环下沉到设备端，构成具身智能的算力与实时性基础。"
+  },
+  {
+   "a": "d_sys_comp",
+   "b": "d_ai_dl",
+   "name": "机器学习编译器",
+   "desc": "TVM、MLIR、Triton 把计算图 lowering 到硬件指令，解决算子融合、内存规划与自动调优，是模型落地的关键一环。"
+  },
+  {
+   "a": "d_sw_db",
+   "b": "d_sys_dist",
+   "name": "NewSQL 与 HTAP",
+   "desc": "分布式事务、Raft 复制与列式执行引擎的结合，使单机数据库的 ACID 能力扩展到跨地域集群。"
+  },
+  {
+   "a": "d_app_quantum",
+   "b": "d_net_crypto",
+   "name": "后量子密码迁移",
+   "desc": "Shor 算法威胁 RSA/ECC，NIST PQC 标准（Kyber/Dilithium）与混合密钥交换正在推动全栈密码迁移。"
+  }
+ ],
+ "stats": {
+  "categories": 6,
+  "directions": 25,
+  "branches": 100,
+  "points": 249,
+  "links": 12
+ }
+}

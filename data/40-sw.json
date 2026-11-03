@@ -1,0 +1,226 @@
+{
+  "category": "sw",
+  "directions": [
+    {
+      "id": "d_sw_se",
+      "name": "软件工程",
+      "en": "Software Engineering",
+      "desc": "以工程化方法构建、演化与保障大规模软件：需求、架构、过程、质量与可信性。",
+      "base": [
+        {"n": "软件生命周期", "t": "瀑布/敏捷/迭代、需求到运维的全流程", "l": "—", "s": "Jira、Confluence"}
+      ],
+      "branches": [
+        {
+          "name": "需求与架构",
+          "desc": "在写第一行代码之前决定系统的形状与边界。",
+          "points": [
+            {"n": "需求工程", "t": "用例、用户故事、领域建模、验收标准", "l": "—", "s": "Jira、Confluence、Miro"},
+            {"n": "软件架构", "t": "分层/微服务/事件驱动、DDD、CQRS、架构权衡", "l": "—", "s": "Spring Cloud、gRPC、Kafka"},
+            {"n": "设计模式与重构", "t": "SOLID、GoF 模式、坏味道识别、技术债度量", "l": "Java、C#", "s": "—"}
+          ]
+        },
+        {
+          "name": "开发过程与 DevOps",
+          "desc": "让变更可以小步、频繁、安全地到达生产环境。",
+          "points": [
+            {"n": "版本与协作", "t": "Git 分支模型、代码评审、主干开发、语义化版本", "l": "—", "s": "Git、GitHub/GitLab、Gerrit"},
+            {"n": "CI/CD 流水线", "t": "持续集成、制品管理、灰度发布、回滚策略", "l": "YAML", "s": "Jenkins、GitLab CI、Argo CD"},
+            {"n": "可观测性", "t": "日志/指标/链路追踪、SLO 与错误预算", "l": "—", "s": "OpenTelemetry、Prometheus、Grafana、Jaeger"}
+          ]
+        },
+        {
+          "name": "质量保障",
+          "desc": "用测试与静态分析把缺陷挡在发布之前。",
+          "points": [
+            {"n": "测试体系", "t": "单元/集成/契约/端到端、模糊测试、覆盖率", "l": "—", "s": "JUnit、pytest、Playwright、Jest"},
+            {"n": "静态分析与度量", "t": "静态检查、圈复杂度、缺陷预测、变异测试", "l": "—", "s": "SonarQube、ESLint、Coverity、PIT"}
+          ]
+        },
+        {
+          "name": "形式化与可信软件",
+          "desc": "对安全关键系统，用数学证明替代抽样测试。",
+          "points": [
+            {"n": "形式化方法", "t": "模型检验、定理证明、精化、设计契约", "l": "TLA+、Coq", "s": "TLA+、Alloy、SPIN、Dafny"},
+            {"n": "供应链安全", "t": "SBOM、依赖治理、许可证合规、签名验证", "l": "—", "s": "SPDX、Dependabot、Snyk、Sigstore"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_sw_db",
+      "name": "数据库与数据管理",
+      "en": "Database Systems & Data Management",
+      "desc": "以数据模型、事务与查询优化为核心，管理持久化数据并提供高并发访问。",
+      "base": [
+        {"n": "数据模型", "t": "关系/文档/图/键值/时序/列式模型", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "关系数据库",
+          "desc": "以关系代数为基础，用声明式 SQL 描述“要什么”而非“怎么做”。",
+          "points": [
+            {"n": "关系模型与 SQL", "t": "关系代数、范式与函数依赖、SQL 标准、窗口函数", "l": "SQL", "s": "PostgreSQL、MySQL、SQLite"},
+            {"n": "查询优化与执行", "t": "代价模型、执行计划、连接算法、列式与向量化执行", "l": "C++", "s": "PostgreSQL Planner、Calcite、DuckDB"}
+          ]
+        },
+        {
+          "name": "存储引擎与事务",
+          "desc": "在磁盘与内存之间组织数据，并保证并发下的正确性。",
+          "points": [
+            {"n": "索引与存储结构", "t": "B+ 树、LSM 树、缓冲池、WAL、压缩编码", "l": "C++", "s": "InnoDB、RocksDB、LevelDB"},
+            {"n": "事务与并发控制", "t": "ACID、两阶段锁、MVCC、隔离级别、分布式事务", "l": "—", "s": "—"}
+          ]
+        },
+        {
+          "name": "分布式与 NoSQL",
+          "desc": "用分片与副本突破单机容量，用弱一致换取可用性。",
+          "points": [
+            {"n": "分布式数据库", "t": "分片、副本、Percolator、Raft、HTAP", "l": "Go、Rust", "s": "TiDB、CockroachDB、OceanBase"},
+            {"n": "NoSQL 系统", "t": "文档/键值/列族/图模型、最终一致性、CAP 权衡", "l": "—", "s": "MongoDB、Redis、Cassandra、Neo4j"}
+          ]
+        },
+        {
+          "name": "新型数据管理",
+          "desc": "面向分析、向量与实时场景重新设计存储与查询。",
+          "points": [
+            {"n": "数据仓库与湖仓", "t": "星型模型、列存、表格式、ACID 湖、物化视图", "l": "SQL", "s": "ClickHouse、Iceberg、Hudi、Snowflake"},
+            {"n": "向量与混合检索", "t": "ANN（HNSW/IVF/PQ）、混合检索、重排", "l": "—", "s": "Milvus、Faiss、pgvector、Elasticsearch"},
+            {"n": "流式与实时数仓", "t": "变更数据捕获、流批一体、增量计算", "l": "—", "s": "Flink SQL、Materialize、Kafka"},
+            {"n": "数据治理", "t": "元数据、血缘、数据质量、脱敏与审计", "l": "—", "s": "DataHub、Atlas、Ranger"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_sw_big",
+      "name": "大数据与数据科学",
+      "en": "Big Data & Data Science",
+      "desc": "面向海量异构数据的采集、计算、分析与工程化，把数据变成可复用的决策依据。",
+      "base": [
+        {"n": "数据生命周期", "t": "采集、清洗、存储、分析、服务与归档", "l": "Python", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "数据管道",
+          "desc": "稳定、可回溯地把源端数据搬运到分析端。",
+          "points": [
+            {"n": "采集与集成", "t": "CDC、ETL/ELT、消息队列、批流一体接入", "l": "Python、Java", "s": "Kafka、Debezium、Airflow、NiFi"},
+            {"n": "湖仓表格式", "t": "快照隔离、增量读、Schema 演化、小文件治理", "l": "—", "s": "Iceberg、Delta Lake、Hudi"}
+          ]
+        },
+        {
+          "name": "计算引擎",
+          "desc": "把分布式计算抽象为声明式查询或数据流程序。",
+          "points": [
+            {"n": "批处理", "t": "分区、Shuffle、列式存储、向量化执行", "l": "Scala、Python", "s": "Spark、Hive、Trino"},
+            {"n": "流处理", "t": "事件时间、水位线、Exactly-once、状态后端", "l": "Java", "s": "Flink、Kafka Streams、Spark Structured Streaming"}
+          ]
+        },
+        {
+          "name": "分析与可视化",
+          "desc": "从统计结论到可沟通的视觉叙事。",
+          "points": [
+            {"n": "统计分析与实验", "t": "假设检验、A/B 实验、因果推断、指标口径", "l": "Python、R", "s": "pandas、statsmodels、EconML"},
+            {"n": "数据可视化", "t": "视觉编码、交互筛选、叙事可视化", "l": "JavaScript", "s": "D3、ECharts、Tableau、Vega-Lite"},
+            {"n": "分析工程", "t": "指标建模、语义层、数据质量测试", "l": "SQL", "s": "dbt、Great Expectations、Superset"}
+          ]
+        },
+        {
+          "name": "机器学习工程 MLOps",
+          "desc": "让模型从 Notebook 走向可监控、可回滚的生产系统。",
+          "points": [
+            {"n": "特征与模型管理", "t": "特征库、模型注册、版本化、实验追踪", "l": "Python", "s": "Feast、MLflow、Kubeflow"},
+            {"n": "监控与漂移", "t": "数据漂移、模型监控、影子发布、A/B 上线", "l": "—", "s": "Evidently、Prometheus、Seldon"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_sw_gfx",
+      "name": "图形学与多媒体",
+      "en": "Computer Graphics & Multimedia",
+      "desc": "用计算生成、处理与呈现视觉内容，连接几何物理、GPU 管线与视觉体验。",
+      "base": [
+        {"n": "图形学数学基础", "t": "线性代数、齐次坐标、几何变换、颜色科学", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "渲染",
+          "desc": "从几何与材质出发，计算每个像素的颜色。",
+          "points": [
+            {"n": "光栅化管线", "t": "变换与裁剪、着色器、深度测试、混合", "l": "C++、GLSL", "s": "OpenGL、Vulkan、DirectX 12"},
+            {"n": "全局光照", "t": "BRDF、PBR、路径追踪、光子映射、降噪", "l": "—", "s": "OptiX、Embree、Cycles、Hyperion"}
+          ]
+        },
+        {
+          "name": "几何与动画",
+          "desc": "表示、编辑与驱动三维形状及其运动。",
+          "points": [
+            {"n": "几何处理", "t": "网格、细分、简化、参数化、三维重建", "l": "C++", "s": "CGAL、OpenMesh、libigl"},
+            {"n": "动画与物理仿真", "t": "骨骼蒙皮、IK、刚体/流体/布料仿真", "l": "—", "s": "PhysX、MuJoCo、Houdini"}
+          ]
+        },
+        {
+          "name": "实时图形与 XR",
+          "desc": "在 16ms 的帧预算内完成渲染与交互。",
+          "points": [
+            {"n": "实时渲染技术", "t": "延迟渲染、后处理、LOD、GPU Driven Pipeline", "l": "—", "s": "Unreal Engine、Unity、Nanite"},
+            {"n": "Web3D 与 XR", "t": "WebGL/WebGPU、场景图、空间交互", "l": "JavaScript、WGSL", "s": "Three.js、Babylon.js、WebXR"},
+            {"n": "神经渲染", "t": "NeRF、3D Gaussian Splatting、SDF、可微渲染", "l": "Python", "s": "instant-ngp、Nerfstudio、gsplat"}
+          ]
+        },
+        {
+          "name": "多媒体处理",
+          "desc": "图像、视频与音频的采集、增强、压缩与传输。",
+          "points": [
+            {"n": "图像与视频处理", "t": "滤波、超分、稳像、色彩管理、计算摄影", "l": "C++", "s": "OpenCV、FFmpeg、OpenColorIO"},
+            {"n": "编解码与流媒体", "t": "H.264/HEVC/AV1、封装、ABR、低延迟传输", "l": "—", "s": "x264、SVT-AV1、WebRTC、SRS"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d_sw_hci",
+      "name": "人机交互与可视化",
+      "en": "Human-Computer Interaction & Visualization",
+      "desc": "研究人与计算系统之间的交互方式与信息呈现，兼顾效率、体验与包容性。",
+      "base": [
+        {"n": "交互范式", "t": "命令行/图形/自然交互、心智模型、反馈循环", "l": "—", "s": "—"}
+      ],
+      "branches": [
+        {
+          "name": "交互设计",
+          "desc": "从用户研究到界面实现，把需求翻译为可用的交互流程。",
+          "points": [
+            {"n": "用户研究方法", "t": "访谈、可用性测试、眼动追踪、出声思维、SUS", "l": "—", "s": "Maze、Tobii、UserTesting"},
+            {"n": "界面与前端实现", "t": "组件化、响应式布局、可访问性（WCAG）", "l": "TypeScript", "s": "React、Vue、Tailwind、Storybook"}
+          ]
+        },
+        {
+          "name": "新型交互",
+          "desc": "走出屏幕与键鼠，进入空间、身体与穿戴设备。",
+          "points": [
+            {"n": "3D/XR 交互", "t": "空间交互、手势与注视、触觉反馈、舒适度", "l": "C#、TypeScript", "s": "Unity XR、WebXR、ARKit/ARCore"},
+            {"n": "普适与可穿戴", "t": "情境感知、传感器融合、通知管理、低功耗交互", "l": "—", "s": "Wear OS、OpenBCI、ESP32"}
+          ]
+        },
+        {
+          "name": "可视化与可视分析",
+          "desc": "把抽象数据映射为可感知的视觉形式，支撑探索与决策。",
+          "points": [
+            {"n": "信息可视化", "t": "视觉编码、降维投影、交互筛选、图表选择", "l": "JavaScript、Python", "s": "D3、Vega-Lite、Plotly"},
+            {"n": "可视分析", "t": "多视图联动、渐进式分析、大规模渲染", "l": "—", "s": "deck.gl、Kepler.gl、Tableau、Power BI"}
+          ]
+        },
+        {
+          "name": "无障碍与交互伦理",
+          "desc": "让不同能力的人都能使用，并避免设计中的操纵。",
+          "points": [
+            {"n": "包容性设计", "t": "屏幕阅读、替代输入、色彩对比、认知负荷", "l": "—", "s": "NVDA、VoiceOver、axe"},
+            {"n": "隐私与伦理", "t": "暗模式、知情同意、算法公平、注意力保护", "l": "—", "s": "—"}
+          ]
+        }
+      ]
+    }
+  ]
+}

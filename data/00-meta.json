@@ -1,0 +1,69 @@
+{
+  "title": "计算机科学与技术知识图谱",
+  "subtitle": "专业分类体系 · 衍生方向 · 技术组成",
+  "version": "2026.11",
+  "categories": [
+    {
+      "id": "math",
+      "name": "数学与理论基础",
+      "short": "数理基础",
+      "code": "MATH",
+      "color": "#7AA2F7",
+      "desc": "计算机科学的公理化根基：离散结构、可计算性、概率统计与数值优化。它不直接产出系统，但决定了哪些问题可解、可高效求解、可被证明。"
+    },
+    {
+      "id": "sys",
+      "name": "计算机系统与体系结构",
+      "short": "系统结构",
+      "code": "SYS",
+      "color": "#F7768E",
+      "desc": "从逻辑门、指令集、操作系统到分布式集群，研究如何用硬件与系统软件把算力高效、可靠地交付给上层应用。"
+    },
+    {
+      "id": "sw",
+      "name": "软件与数据工程",
+      "short": "软件数据",
+      "code": "SW",
+      "color": "#9ECE6A",
+      "desc": "研究大规模软件的构造、演化与数据管理：软件工程方法、数据库内核、大数据计算、图形交互与可视化。"
+    },
+    {
+      "id": "net",
+      "name": "网络与安全",
+      "short": "网络安全",
+      "code": "NET",
+      "color": "#E0AF68",
+      "desc": "研究异构节点间的连接、协议与信任：网络体系结构、可编程数据面、攻防对抗、密码学与隐私计算。"
+    },
+    {
+      "id": "ai",
+      "name": "智能与认知计算",
+      "short": "智能认知",
+      "code": "AI",
+      "color": "#BB9AF7",
+      "desc": "研究智能的表示、学习与感知：知识工程、机器学习、深度学习与大模型、视觉语音语言等感知智能。"
+    },
+    {
+      "id": "app",
+      "name": "应用与交叉前沿",
+      "short": "应用交叉",
+      "code": "APP",
+      "color": "#7DCFFF",
+      "desc": "计算向物理世界与其他学科的延伸：物联网嵌入式、机器人与具身智能、区块链、生物信息、量子计算。"
+    }
+  ],
+  "crossLinks": [
+    {"a": "d_ai_dl", "b": "d_sw_db", "name": "向量数据库与 RAG", "desc": "大模型把数据库的外延从结构化查询扩展到高维向量检索：HNSW/IVF 索引、混合检索、重排与 GraphRAG 共同构成检索增强生成的技术底座。"},
+    {"a": "d_ai_dl", "b": "d_sys_arch", "name": "AI 芯片与异构计算", "desc": "Transformer 的算力需求催生脉动阵列、HBM 与 NVLink 体系；编译器（TVM/Triton）负责把算子映射到 GPU/NPU，形成“模型—编译—芯片”协同设计。"},
+    {"a": "d_sw_gfx", "b": "d_ai_perc", "name": "神经渲染与三维重建", "desc": "NeRF、3D Gaussian Splatting 把可微渲染与视觉重建结合，用神经场替代传统几何管线，服务数字人、自动驾驶仿真与空间计算。"},
+    {"a": "d_net_sec", "b": "d_ai_dl", "name": "AI 安全与对抗攻防", "desc": "对抗样本、提示注入、模型窃取与越狱构成新的攻击面；防御侧依赖对抗训练、红队评测与运行时护栏。"},
+    {"a": "d_app_bio", "b": "d_ai_dl", "name": "AI for Science", "desc": "AlphaFold 类几何深度学习、神经算子与物理约束网络，把大模型能力迁移到分子、材料与气候等科学计算问题。"},
+    {"a": "d_net_net", "b": "d_sys_dist", "name": "数据中心网络与 RDMA", "desc": "分布式训练与存算分离要求无损网络、RoCE/InfiniBand 与在网计算，网络成为分布式系统的性能瓶颈与设计变量。"},
+    {"a": "d_net_crypto", "b": "d_app_chain", "name": "零知识证明与 ZK-Rollup", "desc": "zk-SNARK/STARK 把链下计算压缩为可验证证明，是 Layer2 扩容与隐私交易的核心密码学组件。"},
+    {"a": "d_sw_hci", "b": "d_ai_dl", "name": "生成式交互与智能界面", "desc": "大模型把 GUI 从“点击”推向“意图表达”：多模态输入、Agent 编排、可控生成正在重写人机交互范式。"},
+    {"a": "d_app_iot", "b": "d_app_robot", "name": "端侧智能与具身系统", "desc": "TinyML、模型量化与实时 OS 让感知-决策闭环下沉到设备端，构成具身智能的算力与实时性基础。"},
+    {"a": "d_sys_comp", "b": "d_ai_dl", "name": "机器学习编译器", "desc": "TVM、MLIR、Triton 把计算图 lowering 到硬件指令，解决算子融合、内存规划与自动调优，是模型落地的关键一环。"},
+    {"a": "d_sw_db", "b": "d_sys_dist", "name": "NewSQL 与 HTAP", "desc": "分布式事务、Raft 复制与列式执行引擎的结合，使单机数据库的 ACID 能力扩展到跨地域集群。"},
+    {"a": "d_app_quantum", "b": "d_net_crypto", "name": "后量子密码迁移", "desc": "Shor 算法威胁 RSA/ECC，NIST PQC 标准（Kyber/Dilithium）与混合密钥交换正在推动全栈密码迁移。"}
+  ]
+}
